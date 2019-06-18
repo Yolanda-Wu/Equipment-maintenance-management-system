@@ -1,0 +1,46 @@
+{
+  "name": "jiaolemah5",
+  "version": "1.0.0",
+  "description": "a h5 for students to submit homework",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack-dev-server --open",
+    "watch": "webpack --watch",
+    "lint": "eslint --ext .js src",
+    "dll": "webpack --config webpack_dll.config.js"
+  },
+  "keywords": [],
+  "author": "Yolanda",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.1",
+    "dart-sass": "^1.20.1",
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-react": "^7.12.4",
+    "file-loader": "^3.0.1",
+    "pre-commit": "^1.2.2",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1",
+    "webpack-dev-server": "^3.3.1"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}

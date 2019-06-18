@@ -1,0 +1,23 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "commonjs": true
+  },
+  "extends": "plugin:react/recommended",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true,
+      "arrowFunctions": true,
+      "classes": true,
+      "modules": true,
+      "defaultParams": true
+    },
+    "sourceType": "module"
+  },
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ]
+}
