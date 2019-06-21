@@ -1,24 +1,21 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Home from "./page/home/home";
-import TiltleBar from "./common/TitleBar/titleBar";
+import { BrowserRouter, Route } from "react-router-dom";
+import Login from "./page/login";
+import LocalStorage from "./utils/localStorage";
+import "./App.scss";
 
 class App extends Component {
   state = {
-    isLogin: false,
-    id: "student",
-    secondaryDir: "物理"
+    name: localStorage.name ? localStorage.name : "",
+    type: localStorage.type ? localStorage.type : null
   };
 
   render() {
     return (
       <div className="App">
-        <TiltleBar theme={this.state.id} />
-        <Router>
-          <Switch>
-            <Route path="/" component={Home} />
-          </Switch>
-        </Router>
+        <BrowserRouter>
+          <Route exact path="/" component={Login} />
+        </BrowserRouter>
       </div>
     );
   }

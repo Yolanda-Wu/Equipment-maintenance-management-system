@@ -1,4 +1,6 @@
 const path = require("path");
+const mocker = require("./mocker");
+const apiMocker = require("mocker-api");
 
 module.exports = {
   entry: "./src/index.js",

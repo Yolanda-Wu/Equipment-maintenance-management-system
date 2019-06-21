@@ -1,0 +1,57 @@
+.login-wrap {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .login-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 20px 0;
+  }
+  .accountBox,
+  .passwordBox {
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    // :hover {
+    //   border: 1px solid rgb(248, 85, 26);
+    // }
+  }
+
+  .password,
+  .account {
+    width: 200px;
+    height: 30px;
+    border: 1px solid black;
+    margin-left: 10px;
+
+    :focus,
+    :hover {
+      border: 1px solid rgb(248, 85, 26);
+    }
+  }
+  .a-icon,
+  .p-icon {
+    font-family: "iconfont" !important;
+    font-size: 30px;
+    color: black;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .submit {
+    width: 100px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: rgb(248, 85, 26);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+}
