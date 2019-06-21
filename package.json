@@ -9,8 +9,7 @@
     "build": "webpack",
     "start": "webpack-dev-server --open",
     "watch": "webpack --watch",
-    "lint": "eslint --ext .js src",
-    "dll": "webpack --config webpack_dll.config.js"
+    "lint": "eslint --ext .js src"
   },
   "keywords": [],
   "author": "Yolanda",

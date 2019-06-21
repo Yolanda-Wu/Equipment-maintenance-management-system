@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+import LocalStorage from "../../utils/localStorage";
 import Login from "../../components/Login";
 import { login } from "../../api/index";
 
@@ -24,9 +25,15 @@ class LoginBox extends Component {
   };
 
   handleSubmit = event => {
-    // login(this.state).then(data => {
-    //
-    // });
+    login(this.state)
+      .then(data => {
+        const { redirect_url, jwt_token } = data;
+        LocalStorage["jwt_token"] = jwt_token;
+        window.location.href = redirect_url;
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   render() {

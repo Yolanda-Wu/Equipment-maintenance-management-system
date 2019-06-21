@@ -1,5 +1,5 @@
 import routers from "./routers";
-import { request } from "./request";
+import { request, requestWithToken } from "./request";
 
 const GET = "GET";
 const POST = "POST";
@@ -28,6 +28,19 @@ export const login = data =>
     request(getUrl(routers.login))({
       method: POST,
       body: JSON.stringify(data)
+    })
+      .then(data => {
+        resolve(data);
+      })
+      .catch(err => {
+        reject(err);
+      });
+  });
+
+export const getUserInfo = data =>
+  new Promise((resolve, reject) => {
+    requestWithToken(getUrl(routers.getUserInfo, data))({
+      method: GET
     })
       .then(data => {
         resolve(data);

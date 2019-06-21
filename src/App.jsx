@@ -1,22 +1,26 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Link, BrowserRouter, Route } from "react-router-dom";
 import Login from "./page/login";
+import Admin from "./page/admin";
+import Navigation from "./container/NavigationBox";
 import LocalStorage from "./utils/localStorage";
 import "./App.scss";
 
 class App extends Component {
-  state = {
-    name: localStorage.name ? localStorage.name : "",
-    type: localStorage.type ? localStorage.type : null
-  };
+  state = {};
 
   render() {
     return (
-      <div className="App">
-        <BrowserRouter>
+      <BrowserRouter>
+        <div className="App">
+          <Navigation />
           <Route exact path="/" component={Login} />
-        </BrowserRouter>
-      </div>
+          <Route exact path="/admin" component={Admin} />
+          <Route exact path="/assign" component={Login} />
+          <Route exact path="/engineer" component={Login} />
+          <Route exact path="/operator" component={Login} />
+        </div>
+      </BrowserRouter>
     );
   }
 }

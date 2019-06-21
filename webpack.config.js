@@ -1,15 +1,19 @@
 const path = require("path");
-const mocker = require("./mocker");
 const apiMocker = require("mocker-api");
 
 module.exports = {
   entry: "./src/index.js",
   output: {
     filename: "main.js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "dist"),
+    publicPath: "/"
   },
   mode: "development",
   devServer: {
+    before(app) {
+      apiMocker(app, path.resolve("./mocker/api.js"));
+    },
+    historyApiFallback: true,
     contentBase: "./dist"
   },
   resolve: {

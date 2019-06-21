@@ -1,3 +1,5 @@
+import LocalStorage from "../utils/localStorage";
+
 export const request = url => config =>
   new Promise((resolve, reject) => {
     fetch(url, {
@@ -13,8 +15,10 @@ export const request = url => config =>
             if (responseJson.status === 200) {
               resolve(responseJson.data);
             } else if (res.status === 401) {
+              LocalStorage["jwt_token"] = "";
               window.location.href = "/";
             } else {
+              resolve(responseJson.err_msg);
             }
           })
           .catch(err => {
@@ -24,4 +28,13 @@ export const request = url => config =>
       .catch(err => {
         reject(err);
       });
+  });
+
+export const requestWithToken = url => config =>
+  request(url)({
+    ...config,
+    headers: {
+      Authorization: `Bearer ${LocalStorage["jwt_token"]}`,
+      "content-type": "application/json"
+    }
   });
