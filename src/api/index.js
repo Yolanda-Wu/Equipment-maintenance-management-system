@@ -49,3 +49,16 @@ export const getUserInfo = data =>
         reject(err);
       });
   });
+
+export const getRepairList = data =>
+  new Promise((resolve, reject) => {
+    requestWithToken(getUrl(routers.getRepairList, data))({
+      method: GET
+    })
+      .then(data => {
+        resolve(data);
+      })
+      .catch(err => {
+        reject(err);
+      });
+  });

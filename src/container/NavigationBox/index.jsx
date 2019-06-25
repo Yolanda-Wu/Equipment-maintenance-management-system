@@ -20,7 +20,7 @@ class NavigationBox extends Component {
       getUserInfo()
         .then(data => {
           this.setState(data);
-          console.log(data);
+          //console.log(data);
           const { type, redirect_url } = data;
           switch (type) {
             case 0:
@@ -47,13 +47,19 @@ class NavigationBox extends Component {
     }
   }
 
-  handleClick = () => {
+  handleClick = e => {
     console.log("click");
   };
 
   render() {
     const { nickname, avator } = this.state;
-    return <Navigation nickname={nickname} avator={avator} />;
+    return (
+      <Navigation
+        nickname={nickname}
+        avator={avator}
+        handleClick={this.handleClick}
+      />
+    );
   }
 }
 

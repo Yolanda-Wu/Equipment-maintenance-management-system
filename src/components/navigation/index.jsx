@@ -8,9 +8,9 @@ const Navigation = props => {
   let AdminRight = () => {
     return (
       <>
-        <i className="operate" onClick={handleClick}>
-          &#xe601;
-        </i>
+        <Link to="/admin/inquiry">
+          <i className="operate">&#xe601;</i>
+        </Link>
         <span id="nickname">{nickname}</span>
         <img className="avator" src={avator} />
       </>
@@ -37,7 +37,7 @@ const Navigation = props => {
         <span className="title">东软设备维修中心</span>
       </Link>
       <div className="right">
-        <Route exact path="/admin" component={AdminRight} />
+        <Route path="/admin" component={AdminRight} />
         <Route exact path="/assign" component={AssignRight} />
         <Route exact path="/engineer" component={Avator} />
         <Route exact path="/operator" component={Avator} />

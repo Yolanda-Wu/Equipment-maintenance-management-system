@@ -3,7 +3,6 @@ import { Link, BrowserRouter, Route } from "react-router-dom";
 import Login from "./page/login";
 import Admin from "./page/admin";
 import Navigation from "./container/NavigationBox";
-import LocalStorage from "./utils/localStorage";
 import "./App.scss";
 
 class App extends Component {
@@ -16,6 +15,7 @@ class App extends Component {
           <Navigation />
           <Route exact path="/" component={Login} />
           <Route exact path="/admin" component={Admin} />
+          <Route path="/admin/:page" component={Admin} />
           <Route exact path="/assign" component={Login} />
           <Route exact path="/engineer" component={Login} />
           <Route exact path="/operator" component={Login} />

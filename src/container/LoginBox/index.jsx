@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
 import LocalStorage from "../../utils/localStorage";
-import Login from "../../components/Login";
+import Login from "../../components/login";
 import { login } from "../../api/index";
 
 class LoginBox extends Component {

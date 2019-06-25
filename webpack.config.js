@@ -1,5 +1,6 @@
 const path = require("path");
 const apiMocker = require("mocker-api");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -9,12 +10,13 @@ module.exports = {
     publicPath: "/"
   },
   mode: "development",
+  devtool: "cheap-module-eval-source-map",
   devServer: {
     before(app) {
       apiMocker(app, path.resolve("./mocker/api.js"));
     },
     historyApiFallback: true,
-    contentBase: "./dist"
+    contentBase: path.join(__dirname, "dist")
   },
   resolve: {
     extensions: [".js", ".jsx", ".json"]
@@ -68,4 +70,10 @@ module.exports = {
       }
     ]
   }
+  // plugins: [
+  //   new HtmlWebpackPlugin({
+  //     template: "./dist/index.html",
+  //     filename: "index.html"
+  //   })
+  // ]
 };
