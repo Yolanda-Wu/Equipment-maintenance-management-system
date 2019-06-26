@@ -1,7 +1,7 @@
 .record-wrap {
   position: fixed;
   width: 600px;
-  height: 400px;
+  height: 450px;
   background-color: white;
   border-radius: 8px;
   top: 0;
@@ -9,79 +9,81 @@
   left: 0;
   right: 0;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  // display: flex;
+  // flex-direction: column;
+  //align-items: center;
   .record-title {
     font-size: 2rem;
     text-align: center;
     margin: 20px;
   }
-  .record-board {
+
+  .regist-info {
     width: 80%;
-    border: 1px solid black;
-    background-color: rgb(219, 217, 217);
-    margin: 0 0 30px;
-    .regist-list {
-      width: 100%;
-      margin: 5px 0;
-      text-align: center;
-    }
-    .regist-info {
-      width: 100%;
-      display: flex;
-      //border-top: 0.5px solid black;
-      //border-bottom: 0.5px solid black;
-      .regist-left {
-        width: 50%;
-        border-right: 1px solid black;
-        div {
-          border-top: 1px solid black;
-          //border-bottom: 0.5px solid black;
-          display: flex;
-          label {
-            flex-grow: 1;
-          }
-          input {
-            flex-grow: 2;
-          }
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+    .regist-left {
+      width: 50%;
+      //border-right: 1px solid black;
+      div {
+        //border-top: 1px solid black;
+        //border-bottom: 0.5px solid black;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5px;
+        label {
+          //flex-grow: 1;
         }
-      }
-      .regist-right {
-        width: 50%;
-        div {
-          border-top: 1px solid black;
-          //border-bottom: 0.5px solid black;
-          display: flex;
-          label {
-            flex-grow: 1;
-          }
-          input {
-            flex-grow: 2;
-          }
+        input {
+          width: 80%;
+          //flex-grow: 1;
+          //margin-left: 5px;
         }
       }
     }
-    .machine-err {
-      display: flex;
-      flex-direction: column;
-      border-top: 1px solid black;
-      label {
-        margin: 5px 0;
-        text-align: center;
-      }
-      input {
-        border-top: 1px solid black;
-        height: 40px;
+    .regist-right {
+      width: 50%;
+      div {
+        //border-top: 1px solid black;
+        //border-bottom: 0.5px solid black;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 5px;
+        label {
+          //flex-grow: 1;
+        }
+        input {
+          width: 80%;
+          //flex-grow: 1;
+          //margin-left: 5px;
+        }
       }
     }
   }
+  .machine-err {
+    display: flex;
+    flex-direction: column;
+    width: 72%;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    label {
+      margin: 5px 0;
+      //text-align: center;
+    }
+    input {
+      //border-top: 1px solid black;
+      height: 40px;
+    }
+  }
+
   .regist-btn {
     width: 60px;
     height: 30px;
     background-color: rgb(248, 133, 26);
     text-align: center;
     border-radius: 5px;
+    margin: auto;
     cursor: pointer;
     label {
       color: white;

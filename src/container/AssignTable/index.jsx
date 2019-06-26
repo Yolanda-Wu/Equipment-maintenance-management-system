@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { withRouter, Link } from "react-router-dom";
-import RepairList from "../../components/repairlist";
 import { getRepairList } from "../../api/index";
+import AssignList from "../../components/AssignList";
 
-class RepairTable extends Component {
+class AssignTable extends Component {
   state = {
     page: 1,
     repairList: [],
@@ -41,6 +40,7 @@ class RepairTable extends Component {
   render() {
     const { pageCount, page } = this.state;
     const repairList = this.state.repairList.slice((page - 1) * 10, page * 10);
+    const { handleClick } = this.props;
     return (
       <div className="work-list">
         <div className="list-title">
@@ -56,14 +56,14 @@ class RepairTable extends Component {
           <div className="th-td" key={"th-td-status"}>
             <label>报修状态</label>
           </div>
-          <div className="th-td" key={"th-td-constact"}>
-            <label>联系人</label>
+          <div className="th-td" key={"th-td-maintainer"}>
+            <label>维修人员</label>
           </div>
-          <div className="th-td" key={"th-td-settle"}>
-            <label>结算</label>
+          <div className="th-td" key={"th-td-assign"}>
+            <label>分配</label>
           </div>
         </div>
-        <RepairList repairList={repairList} />
+        <AssignList repairList={repairList} handleClick={handleClick} />
         <div className="index-wrap">
           <label className="prev" onClick={this.changePage}>
             上一页
@@ -86,4 +86,4 @@ class RepairTable extends Component {
   }
 }
 
-export default withRouter(RepairTable);
+export default AssignTable;
