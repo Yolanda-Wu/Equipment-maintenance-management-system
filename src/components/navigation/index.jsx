@@ -4,31 +4,42 @@ import favicon from "../../assets/favicon.png";
 import "./style.scss";
 
 const Navigation = props => {
-  const { nickname, avator, handleClick } = props;
+  const { nickname, avator, handleLogout, handleClick } = props;
   let AdminRight = () => {
     return (
       <>
         <Link to="/admin/inquiry">
           <i className="operate">&#xe601;</i>
         </Link>
-        <span id="nickname">{nickname}</span>
-        <img className="avator" src={avator} />
+        <div className="userInfo">
+          <span id="nickname">{nickname}</span>
+          <span className="logout">
+            退出登录：
+            <i className="logout-i" onClick={handleLogout}>
+              &#xe61e;
+            </i>
+          </span>
+        </div>
+        <img className="avator" src={avator} onClick={handleClick} />
       </>
     );
   };
-  let AssignRight = () => {
+
+  let Avator = () => {
     return (
       <>
-        <i className="operate" onClick={handleClick}>
-          &#xe657;
-        </i>
-        <span id="nickname">{nickname}</span>
-        <img className="avator" src={avator} />
+        <div className="userInfo">
+          <span id="nickname">{nickname}</span>
+          <span className="logout">
+            退出登录：
+            <i className="logout-i" onClick={handleLogout}>
+              &#xe61e;
+            </i>
+          </span>
+        </div>
+        <img className="avator" src={avator} onClick={handleClick} />
       </>
     );
-  };
-  let Avator = () => {
-    return <img className="avator" src={avator} />;
   };
   return (
     <div className="navigation">
@@ -38,7 +49,7 @@ const Navigation = props => {
       </Link>
       <div className="right">
         <Route path="/admin" component={AdminRight} />
-        <Route exact path="/assign" component={AssignRight} />
+        <Route exact path="/assign" component={Avator} />
         <Route exact path="/engineer" component={Avator} />
         <Route exact path="/operator" component={Avator} />
       </div>

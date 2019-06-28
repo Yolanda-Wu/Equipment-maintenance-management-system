@@ -9,12 +9,13 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     publicPath: "/"
   },
-  mode: "development",
+  // mode: "development",
+  mode: "production",
   devtool: "cheap-module-eval-source-map",
   devServer: {
-    before(app) {
-      apiMocker(app, path.resolve("./mocker/api.js"));
-    },
+    // before(app) {
+    //   apiMocker(app, path.resolve("./mocker/api.js"));
+    // },
     historyApiFallback: true,
     contentBase: path.join(__dirname, "dist")
   },

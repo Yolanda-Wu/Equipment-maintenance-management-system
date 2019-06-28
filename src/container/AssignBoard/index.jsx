@@ -1,10 +1,16 @@
 import React, { Component } from "react";
 import { Link, Route, withRouter, Redirect } from "react-router-dom";
 import PickCertificate from "../../components/pickCertificate";
-import { getMaintainers } from "../../api/index";
+import { getRepair } from "../../api/index";
 import "./style.scss";
 
 class AssignBoard extends Component {
+  state = {};
+  componentDidMount() {
+    getRepair({ order_num: this.props.repairId }).then(data => {
+      this.setState(data);
+    });
+  }
   render() {
     const { repairId, maintainers, handleChange, handleAssign } = this.props;
 
@@ -27,7 +33,7 @@ class AssignBoard extends Component {
                   <label>分配</label>
                 </div>
               </div>
-              <PickCertificate {...this.props} />
+              <PickCertificate {...this.state} repairId={repairId} />
             </div>
           </>
         )}

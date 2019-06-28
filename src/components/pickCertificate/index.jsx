@@ -6,10 +6,10 @@ const PickCertificate = props => {
     company,
     contact,
     repairId,
-    pro_type,
+    product_type,
     mach_type,
-    sysId,
-    brand,
+    product_sysId,
+    product_brand,
     dev_error
   } = props;
   return (
@@ -29,7 +29,7 @@ const PickCertificate = props => {
           </div>
           <div className="pro-type">
             <label>产品类型</label>
-            <input type="text" value={pro_type} readOnly />
+            <input type="text" value={product_type} readOnly />
           </div>
           <div className="machine-model">
             <label>机器型号</label>
@@ -47,11 +47,11 @@ const PickCertificate = props => {
           </div>
           <div className="machine-brand">
             <label>机器品牌</label>
-            <input type="text" value={brand} readOnly />
+            <input type="text" value={product_brand} readOnly />
           </div>
           <div className="machine-sysId">
             <label>系列号&#12288;</label>
-            <input type="text" value={sysId} readOnly />
+            <input type="text" value={product_sysId} readOnly />
           </div>
           <div className="contact">
             <label>联系人&#12288;</label>

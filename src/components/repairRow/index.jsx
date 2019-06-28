@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./style.scss";
 
 const RepairRow = props => {
-  const { tds } = props;
+  const { tds, handleSettle } = props;
   let status = tds.repairStatus;
   switch (status) {
     case 0:
@@ -35,9 +35,13 @@ const RepairRow = props => {
       </div>
       <div className="tr-td">
         {tds.repairStatus === 2 ? (
-          <i className="settle">&#xe61b;</i>
+          <i id="settle" className={tds.repairId} onClick={handleSettle}>
+            &#xe61b;
+          </i>
         ) : (
-          <i className="settled">&#xe626;</i>
+          <i id="settled" className={tds.repairId} onClick={handleSettle}>
+            &#xe626;
+          </i>
         )}
       </div>
     </>

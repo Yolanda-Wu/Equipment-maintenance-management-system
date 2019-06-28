@@ -15,8 +15,9 @@ export const request = url => config =>
             if (responseJson.status === 200) {
               resolve(responseJson.data);
             } else if (res.status === 401) {
-              LocalStorage["jwt_token"] = "";
-              window.location.href = "/";
+              if (window.location.pathname !== "/") {
+                window.location.href = "/";
+              }
             } else {
               resolve(responseJson.err_msg);
             }
