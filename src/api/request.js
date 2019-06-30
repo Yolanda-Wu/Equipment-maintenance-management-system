@@ -15,8 +15,8 @@ export const request = url => config =>
             if (responseJson.status === 200) {
               resolve(responseJson.data);
             } else if (res.status === 401) {
-              if (window.location.pathname !== "/") {
-                window.location.href = "/";
+              if (window.location.hash !== "#/") {
+                window.location.href = "#/";
               }
             } else {
               resolve(responseJson.err_msg);

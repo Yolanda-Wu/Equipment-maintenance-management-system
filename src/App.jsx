@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, BrowserRouter, Route } from "react-router-dom";
+import { Link, BrowserRouter, Route, HashRouter } from "react-router-dom";
 import Login from "./page/login";
 import Admin from "./page/admin";
 import Assign from "./page/assign";
@@ -16,7 +16,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div className="App">
           <Navigation />
           <Route exact path="/" component={Login} />
@@ -26,7 +26,7 @@ class App extends Component {
           <Route exact path="/engineer" component={Engineer} />
           <Route exact path="/operator" component={Login} />
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }

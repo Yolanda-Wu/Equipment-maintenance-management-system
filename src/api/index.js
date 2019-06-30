@@ -5,7 +5,7 @@ const GET = "GET";
 const POST = "POST";
 const PUT = "PUT";
 
-const versionPrex = "";
+const versionPrex = "/rms3/index.php/Home";
 
 function getUrl(router, params) {
   let url = `${versionPrex}${router}`;
@@ -20,8 +20,6 @@ function getUrl(router, params) {
       url += "&" + paramsArray.join("&");
     }
   }
-  url = `{:U('${url}')}`;
-  console.log(url);
   return url;
 }
 

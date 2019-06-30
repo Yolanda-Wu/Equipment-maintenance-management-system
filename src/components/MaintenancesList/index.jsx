@@ -10,16 +10,16 @@ const MaintenanceList = props => {
       {maintenancesList.map((tds, index) => {
         let status;
         switch (tds.maintain_status) {
-          case 1:
+          case "1":
             status = "等待分配";
             break;
-          case 2:
+          case "2":
             status = "维修进行中";
             break;
-          case 3:
+          case "3":
             status = "结束";
             break;
-          case 4:
+          case "4":
             status = "结束";
             break;
         }
@@ -38,7 +38,7 @@ const MaintenanceList = props => {
               <label>{tds.maintainer}</label>
             </div>
             <div className="tr-td">
-              {tds.maintain_status === 2 ? (
+              {tds.maintain_status === "2" ? (
                 <i className="assign" id={tds.order_num} onClick={handleClick}>
                   &#xe61f;
                 </i>

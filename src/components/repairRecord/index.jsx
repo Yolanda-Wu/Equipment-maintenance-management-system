@@ -8,10 +8,10 @@ const RepairRecord = props => {
     contact,
     handleChange,
     handleSubmit,
-    pro_type,
-    mach_type,
-    sysId,
-    brand,
+    product_type,
+    other,
+    product_sysid,
+    product_brand,
     dev_error,
     isprint
   } = props;
@@ -38,7 +38,7 @@ const RepairRecord = props => {
               <input
                 type="text"
                 name="pro_type"
-                value={pro_type}
+                value={product_type}
                 onChange={handleChange}
               />
             </div>
@@ -47,7 +47,7 @@ const RepairRecord = props => {
               <input
                 type="text"
                 name="mach_type"
-                value={mach_type}
+                value={other}
                 onChange={handleChange}
               />
             </div>
@@ -66,7 +66,7 @@ const RepairRecord = props => {
               <input
                 type="text"
                 name="brand"
-                value={brand}
+                value={product_brand}
                 onChange={handleChange}
               />
             </div>
@@ -75,7 +75,7 @@ const RepairRecord = props => {
               <input
                 type="text"
                 name="sysId"
-                value={sysId}
+                value={product_sysid}
                 onChange={handleChange}
               />
             </div>

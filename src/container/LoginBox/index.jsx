@@ -24,16 +24,12 @@ class LoginBox extends Component {
   };
 
   handleSubmit = event => {
-    login(this.state)
-      .then(data => {
-        const { redirect_url } = data;
-        // LocalStorage["jwt_token"] = jwt_token;
-        // console.log(redirect_url);
-        window.location.href = redirect_url;
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    login(this.state).then(data => {
+      const { redirect_url } = data;
+      // LocalStorage["jwt_token"] = jwt_token;
+      //console.log(redirect_url);
+      window.location.href = redirect_url;
+    });
   };
 
   render() {

@@ -20,20 +20,20 @@ class NavigationBox extends Component {
         this.setState(data);
         const { identify, redirect_url } = data;
         switch (identify) {
-          case 0:
+          case "1":
             this.setState({ avator: AdminAvator });
             break;
-          case 1:
+          case "2":
             this.setState({ avator: AssignAvator });
             break;
-          case 2:
+          case "3":
             this.setState({ avator: EngineerAvator });
             break;
-          case 3:
+          case "4":
             this.setState({ avator: OperatorAvator });
             break;
         }
-        if (this.props.location.pathname === "/") {
+        if (this.props.location.hash !== redirect_url) {
           window.location.href = redirect_url;
         }
       })
@@ -48,7 +48,7 @@ class NavigationBox extends Component {
 
   handleLogout = e => {
     logout().then(() => {
-      window.location.href = "/";
+      window.location.href = "#/";
     });
   };
 

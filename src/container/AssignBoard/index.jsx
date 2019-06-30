@@ -24,8 +24,8 @@ class AssignBoard extends Component {
               <div className="select">
                 <select onChange={handleChange}>
                   {maintainers.map((m, index) => (
-                    <option value={m.maintainer} key={"maintainer" + index}>
-                      {m.name}
+                    <option value={m.id} key={"maintainer" + index}>
+                      {m.user_name}
                     </option>
                   ))}
                 </select>

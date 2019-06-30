@@ -27,6 +27,7 @@ const Login = props => {
           onChange={handleChange}
           placeholder="请输入你的密码"
           value={password}
+          //onKeyPress={handleChange}
         />
       </div>
       <div className="submit" onClick={handleSubmit}>

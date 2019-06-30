@@ -11,15 +11,16 @@ class RepairBoard extends Component {
     const {
       client_id,
       company,
-      phone,
+      telephone,
       address,
       contact,
       repair_date,
-      pro_type,
-      mach_type,
-      sysId,
+      product_type,
+      // mach_type,
+      other,
+      product_sysid,
       repairId,
-      brand,
+      product_brand,
       dev_error,
       handleChange,
       handleSubmit,
@@ -48,7 +49,7 @@ class RepairBoard extends Component {
               isregist={isregist}
               client_id={client_id}
               company={company}
-              phone={phone}
+              telephone={telephone}
               address={address}
               contact={contact}
               handleChange={handleChange}
@@ -65,11 +66,11 @@ class RepairBoard extends Component {
               isprint={isprint}
               handleChange={handleChange}
               handleSubmit={handleSubmit}
-              pro_type={pro_type}
-              mach_type={mach_type}
-              sysId={sysId}
+              product_type={product_type}
+              other={other}
+              product_sysid={product_sysid}
               repairId={repairId}
-              brand={brand}
+              product_brand={product_brand}
               dev_error={dev_error}
             />
           )}
@@ -81,11 +82,11 @@ class RepairBoard extends Component {
             <PrintCertificate
               company={company}
               contact={contact}
-              pro_type={pro_type}
-              mach_type={mach_type}
-              sysId={sysId}
+              product_type={product_type}
+              other={other}
+              product_sysid={product_sysid}
               repairId={repairId}
-              brand={brand}
+              product_brand={product_brand}
               dev_error={dev_error}
             />
           )}

@@ -75,4 +75,19 @@
       cursor: pointer;
     }
   }
+
+  .not-settle {
+    width: 60px;
+    height: 30px;
+    background-color: darkgray;
+    text-align: center;
+    border-radius: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+    label {
+      color: white;
+      line-height: 30px;
+      cursor: pointer;
+    }
+  }
 }

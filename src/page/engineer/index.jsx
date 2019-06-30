@@ -21,12 +21,20 @@ class Engineer extends Component {
     });
   };
 
+  handleJump = () => {
+    this.setState({
+      order_num: ""
+    });
+  };
+
   render() {
     const { order_num } = this.state;
     return (
       <div className="engineer-wrap">
         <EngineerTable handleClick={this.handleClick} />
-        {order_num && <MaintenanceBoard {...this.state} />}
+        {order_num && (
+          <MaintenanceBoard {...this.state} handleJump={this.handleJump} />
+        )}
       </div>
     );
   }

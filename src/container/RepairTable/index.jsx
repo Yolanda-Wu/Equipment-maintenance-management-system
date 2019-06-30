@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter, Link } from "react-router-dom";
 import RepairList from "../../components/repairlist";
 import SettleRepair from "../../container/SettleRepair";
-import { getRepairList } from "../../api/index";
+import { getRepairList, settleRepair } from "../../api/index";
 
 class RepairTable extends Component {
   state = {
@@ -16,8 +16,8 @@ class RepairTable extends Component {
     getRepairList()
       .then(data => {
         this.setState({
-          repairList: data.repairList,
-          pageCount: Math.ceil(data.repairList.length / 10)
+          repairList: data.repairslist,
+          pageCount: Math.ceil(data.repairslist.length / 10)
         });
       })
       .catch(err => {
@@ -43,6 +43,14 @@ class RepairTable extends Component {
   handleSettle = e => {
     this.setState({
       order_num: e.target.className
+    });
+  };
+  updateSettle = () => {
+    settleRepair({ order_num: this.state.order_num }).then(() => {
+      alert("结算成功");
+      this.setState({
+        order_num: ""
+      });
     });
   };
 
@@ -94,7 +102,12 @@ class RepairTable extends Component {
             </label>
           </div>
         </div>
-        {order_num && <SettleRepair order_num={order_num} />}
+        {order_num && (
+          <SettleRepair
+            order_num={order_num}
+            updateSettle={this.updateSettle}
+          />
+        )}
       </>
     );
   }

@@ -10,8 +10,8 @@ class SettleRepair extends Component {
     contact: "",
     repairId: "",
     product_type: "",
-    mach_type: "",
-    product_sysId: "",
+    other: "",
+    product_sysid: "",
     product_brand: "",
     dev_error: "",
     assign_date: "",
@@ -31,12 +31,6 @@ class SettleRepair extends Component {
     });
   }
 
-  handleSettle = () => {
-    settleRepair({ order_num: this.props.order_num }).then(() => {
-      alert("结算成功");
-      window.location.href = "/admin";
-    });
-  };
   render() {
     const {
       detect_record,
@@ -46,7 +40,7 @@ class SettleRepair extends Component {
       note,
       maintain_status
     } = this.state;
-    const { order_num } = this.props;
+    const { order_num, updateSettle } = this.props;
     return (
       <>
         <div className="mask" />
@@ -107,13 +101,17 @@ class SettleRepair extends Component {
             </div>
           </div>
 
-          {maintain_status === 4 ? (
+          {maintain_status === "4" ? (
             <div className="settled">
               <label>已结算</label>
             </div>
-          ) : (
+          ) : maintain_status === "3" ? (
             <div className="settle-btn">
-              <label onClick={this.handleSettle}>结算</label>
+              <label onClick={updateSettle}>结算</label>
+            </div>
+          ) : (
+            <div className="not-settle">
+              <label>结算</label>
             </div>
           )}
         </div>

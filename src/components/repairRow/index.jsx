@@ -3,29 +3,31 @@ import "./style.scss";
 
 const RepairRow = props => {
   const { tds, handleSettle } = props;
-  let status = tds.repairStatus;
+  let status = tds.repair_status;
   switch (status) {
-    case 0:
+    case "1":
       status = "等待";
       break;
-    case 1:
+    case "2":
       status = "维修中";
       break;
-    case 2:
-      status = "完成";
+    case "3":
+      status = "待结算";
       break;
-    case 3:
+    case "4":
       status = "已结算";
       break;
+    default:
+      status = "出错";
   }
 
   return (
     <>
       <div className="tr-td" key="tr-td-id">
-        <label>{tds.repairId}</label>
+        <label>{tds.order_num}</label>
       </div>
       <div className="tr-td" key="tr-td-time">
-        <label>{tds.repair}</label>
+        <label>{tds.repair_date}</label>
       </div>
       <div className="tr-td" key="tr-td-status">
         <label>{status}</label>
@@ -34,13 +36,17 @@ const RepairRow = props => {
         <label>{tds.contact}</label>
       </div>
       <div className="tr-td">
-        {tds.repairStatus === 2 ? (
-          <i id="settle" className={tds.repairId} onClick={handleSettle}>
+        {tds.repair_status === "3" ? (
+          <i id="tosettle" className={tds.order_num} onClick={handleSettle}>
             &#xe61b;
           </i>
-        ) : (
-          <i id="settled" className={tds.repairId} onClick={handleSettle}>
+        ) : tds.repair_status === "4" ? (
+          <i id="settled" className={tds.order_num} onClick={handleSettle}>
             &#xe626;
+          </i>
+        ) : (
+          <i id="unsettle" className={tds.order_num} onClick={handleSettle}>
+            &#xe61b;
           </i>
         )}
       </div>

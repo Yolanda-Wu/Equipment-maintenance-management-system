@@ -7,8 +7,8 @@ const PickCertificate = props => {
     contact,
     repairId,
     product_type,
-    mach_type,
-    product_sysId,
+    other,
+    product_sysid,
     product_brand,
     dev_error
   } = props;
@@ -33,7 +33,7 @@ const PickCertificate = props => {
           </div>
           <div className="machine-model">
             <label>机器型号</label>
-            <input type="text" value={mach_type} readOnly />
+            <input type="text" value={other} readOnly />
           </div>
           <div className="company">
             <label>单位名称</label>
@@ -51,7 +51,7 @@ const PickCertificate = props => {
           </div>
           <div className="machine-sysId">
             <label>系列号&#12288;</label>
-            <input type="text" value={product_sysId} readOnly />
+            <input type="text" value={product_sysid} readOnly />
           </div>
           <div className="contact">
             <label>联系人&#12288;</label>

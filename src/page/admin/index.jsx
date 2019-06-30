@@ -8,21 +8,23 @@ import {
   newClient,
   addRepair
 } from "../../api/index";
+import formatDate from "../../utils/formatDate";
 import "./style.scss";
 
 class Admin extends Component {
   state = {
     client_id: "",
     company: "",
-    phone: "",
+    telephone: "",
     address: "",
     contact: "",
     //repair_date: "",
-    pro_type: "",
-    mach_type: "",
-    sysId: "",
+    product_type: "",
+    // mach_type: "",
+    other: "",
+    product_sysid: "",
     repairId: "",
-    brand: "",
+    product_brand: "",
     dev_error: "",
     isNew: false,
     isregist: false,
@@ -39,7 +41,7 @@ class Admin extends Component {
         this.setState({ company: value });
         break;
       case "phone":
-        this.setState({ phone: value });
+        this.setState({ telephone: value });
         break;
       case "address":
         this.setState({ address: value });
@@ -48,16 +50,16 @@ class Admin extends Component {
         this.setState({ contact: value });
         break;
       case "pro_type":
-        this.setState({ pro_type: value });
+        this.setState({ product_type: value });
         break;
       case "mach_type":
-        this.setState({ mach_type: value });
+        this.setState({ other: value });
         break;
       case "sysId":
-        this.setState({ sysId: value });
+        this.setState({ product_sysid: value });
         break;
       case "brand":
-        this.setState({ brand: value });
+        this.setState({ product_brand: value });
         break;
       case "dev_error":
         this.setState({ dev_error: value });
@@ -94,7 +96,7 @@ class Admin extends Component {
         client_id: this.state.client_id,
         company: this.state.company,
         contact: this.state.contact,
-        telephone: this.state.phone,
+        telephone: this.state.telephone,
         address: this.state.address
       };
       newClient(client).then(data => {
@@ -105,17 +107,18 @@ class Admin extends Component {
       });
     } else if (_route === "regist") {
       const body = {
-        repair_date: new Date(),
-        repair_status: 0,
-        product_type: this.state.pro_type,
-        product_brand: this.state.brand,
-        product_sysId: this.state.sysId,
+        repair_date: formatDate(new Date()),
+        repair_status: 1,
+        product_type: this.state.product_type,
+        product_brand: this.state.product_brand,
+        product_sysId: this.state.product_sysid,
         dev_error: this.state.dev_error,
-        client_id: this.state.client_id
+        client_id: this.state.client_id,
+        other: this.state.other
       };
       addRepair(body).then(data => {
         this.setState({
-          repairId: data.repairId,
+          repairId: data.order_num,
           isregist: false,
           isprint: true
         });
@@ -124,8 +127,8 @@ class Admin extends Component {
       window.location.href = "/admin";
     }
   };
+
   render() {
-    const { isNew, isregist, isprint } = this.state;
     return (
       <div className="admin-wrap">
         <RepairTable />

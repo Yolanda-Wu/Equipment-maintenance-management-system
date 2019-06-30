@@ -6,7 +6,7 @@ const NewClient = props => {
   const {
     client_id,
     company,
-    phone,
+    telephone,
     address,
     contact,
     handleChange,
@@ -40,7 +40,7 @@ const NewClient = props => {
             <input
               type="text"
               name="phone"
-              value={phone}
+              value={telephone}
               onChange={handleChange}
             />
           </div>

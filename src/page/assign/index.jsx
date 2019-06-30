@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import AssignTable from "../../container/AssignTable";
 import AssignBoard from "../../container/AssignBoard";
 import { getMaintainers, assignMaintainer } from "../../api/index";
+import formatDate from "../../utils/formatDate";
 import "./style.scss";
 
 class Assign extends Component {
@@ -17,6 +18,9 @@ class Assign extends Component {
       //console.log(data.maintainers);
       this.setState({
         maintainers: data.maintainers
+      });
+      this.setState({
+        maintainer: data.maintainers[0] ? data.maintainers[0].id : ""
       });
     });
   }
@@ -41,7 +45,7 @@ class Assign extends Component {
     assignMaintainer({
       order_num: this.state.repairId,
       maintainer: this.state.maintainer,
-      assign_data: new Date()
+      assign_date: formatDate(new Date())
     }).then(() => {
       this.setState({
         repairId: "",
@@ -53,11 +57,13 @@ class Assign extends Component {
     return (
       <div className="assign-wrap">
         <AssignTable handleClick={this.handleClick} />
-        <AssignBoard
-          {...this.state}
-          handleChange={this.handleChange}
-          handleAssign={this.handleAssign}
-        />
+        {this.state.repairId && (
+          <AssignBoard
+            {...this.state}
+            handleChange={this.handleChange}
+            handleAssign={this.handleAssign}
+          />
+        )}
       </div>
     );
   }

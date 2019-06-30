@@ -8,7 +8,7 @@ class MaintenanceBoard extends Component {
   state = {
     company: "",
     contact: "",
-    repairId: "",
+    order_num: this.props.order_num,
     product_type: "",
     mach_type: "",
     product_sysId: "",
@@ -57,7 +57,7 @@ class MaintenanceBoard extends Component {
       config.maintain_status = 3;
     }
     updateMaintenance(config).then(data => {
-      window.location.href = "/engineer";
+      this.props.handleJump();
     });
   };
   render() {

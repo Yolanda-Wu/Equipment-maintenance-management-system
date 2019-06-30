@@ -13,8 +13,8 @@ class AssignTable extends Component {
     getRepairList()
       .then(data => {
         this.setState({
-          repairList: data.repairList,
-          pageCount: Math.ceil(data.repairList.length / 10)
+          repairList: data.repairslist,
+          pageCount: Math.ceil(data.repairslist.length / 10)
         });
       })
       .catch(err => {
