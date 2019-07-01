@@ -1,7 +1,8 @@
 .maintain-box {
   position: fixed;
   width: 600px;
-  height: 90vh;
+  height: 85vh;
+  position: absolute;
   background-color: white;
   border-radius: 8px;
   top: 0;
@@ -9,36 +10,57 @@
   left: 0;
   right: 0;
   margin: auto;
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
   header {
-    font-size: 2rem;
+    font-size: 1.3rem;
     text-align: center;
-    margin: 20px;
+    margin: 10px;
+    color: #357a58;
   }
 
   .maintain-info {
     width: 80%;
-    border: 1px solid black;
+    border: 1px solid #9bc9b2;
+    background-color: #73a58c;
+    padding: 10px;
     div {
-      width: 100%;
+      // width: 100%;
+      //height: 50px;
       display: flex;
       flex-direction: column;
       label {
-        //text-align: center;
+        height: 25px;
+        line-height: 25px;
+        color: white;
       }
       input {
+        height: 30px;
       }
     }
     .cost {
       //display: flex;
+      height: 25px;
       flex-direction: row;
+      justify-content: space-between;
       div {
         width: 50%;
-        //display: flex;
+        height: 25px;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
+        flex-grow: 1;
+        label {
+          width: 60px;
+          height: 20px;
+          line-height: 20px;
+        }
+        input {
+          //width: 100px;
+          height: 20px;
+        }
       }
     }
   }
@@ -47,7 +69,7 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin: 20px 0;
+    margin: 5px 0;
     #update-btn,
     #finish-btn {
       width: 100px;

@@ -13,7 +13,8 @@ const RepairRecord = props => {
     product_sysid,
     product_brand,
     dev_error,
-    isprint
+    isprint,
+    handleClose
   } = props;
   //console.log(props);
   return (
@@ -21,6 +22,9 @@ const RepairRecord = props => {
       {isprint && <Redirect to="/admin/print" />}
       <div className="mask" />
       <div className="record-wrap">
+        <i className="close" onClick={handleClose}>
+          &#xe8b7;
+        </i>
         <header className="record-title">报修登记</header>
         <div className="regist-info">
           <div className="regist-left">

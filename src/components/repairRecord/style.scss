@@ -3,6 +3,7 @@
   width: 600px;
   height: 450px;
   background-color: white;
+  position: absolute;
   border-radius: 8px;
   top: 0;
   bottom: 0;
@@ -16,6 +17,7 @@
     font-size: 2rem;
     text-align: center;
     margin: 20px;
+    color: #357a58;
   }
 
   .regist-info {
@@ -23,7 +25,8 @@
     display: flex;
     justify-content: space-between;
     margin-left: 50px;
-    .regist-left {
+    .regist-left,
+    .regist-right {
       width: 50%;
       //border-right: 1px solid black;
       div {
@@ -33,33 +36,39 @@
         flex-direction: column;
         margin-bottom: 5px;
         label {
+          color: rgb(80, 78, 78);
           //flex-grow: 1;
         }
         input {
           width: 80%;
+          border: 1px solid rgb(80, 78, 78);
           //flex-grow: 1;
           //margin-left: 5px;
         }
-      }
-    }
-    .regist-right {
-      width: 50%;
-      div {
-        //border-top: 1px solid black;
-        //border-bottom: 0.5px solid black;
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 5px;
-        label {
-          //flex-grow: 1;
-        }
-        input {
-          width: 80%;
-          //flex-grow: 1;
-          //margin-left: 5px;
+        input:hover,
+        input:focus {
+          border: 1px solid #357a58;
         }
       }
     }
+    // .regist-right {
+    //   width: 50%;
+    //   div {
+    //     //border-top: 1px solid black;
+    //     //border-bottom: 0.5px solid black;
+    //     display: flex;
+    //     flex-direction: column;
+    //     margin-bottom: 5px;
+    //     label {
+    //       //flex-grow: 1;
+    //     }
+    //     input {
+    //       width: 80%;
+    //       //flex-grow: 1;
+    //       //margin-left: 5px;
+    //     }
+    //   }
+    // }
   }
   .machine-err {
     display: flex;
@@ -68,12 +77,16 @@
     margin-left: 50px;
     margin-bottom: 30px;
     label {
+      color: rgb(80, 78, 78);
       margin: 5px 0;
-      //text-align: center;
     }
     input {
-      //border-top: 1px solid black;
+      border: 1px solid rgb(80, 78, 78);
       height: 40px;
+    }
+    input:hover,
+    input:focus {
+      border: 1px solid #357a58;
     }
   }
 
@@ -90,5 +103,8 @@
       line-height: 30px;
       cursor: pointer;
     }
+  }
+  .regist-btn:hover {
+    background-color: tomato;
   }
 }

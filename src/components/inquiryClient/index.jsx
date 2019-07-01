@@ -3,7 +3,14 @@ import { Link, Redirect } from "react-router-dom";
 import "./style.scss";
 
 const InquiryClient = props => {
-  const { client_id, handleChange, handleSubmit, isNew, isregist } = props;
+  const {
+    client_id,
+    handleChange,
+    handleSubmit,
+    handleClose,
+    isNew,
+    isregist
+  } = props;
   console.log(client_id);
   return (
     <>
@@ -11,6 +18,9 @@ const InquiryClient = props => {
       {isregist && <Redirect to="/admin/regist" />}
       <div className="mask" />
       <div className="inquiry-wrap">
+        <i className="close" onClick={handleClose}>
+          &#xe8b7;
+        </i>
         <header className="inquiry-title">查询客户</header>
         <div className="inquiry-box">
           <label>身份证号：</label>

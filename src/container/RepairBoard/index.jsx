@@ -24,6 +24,7 @@ class RepairBoard extends Component {
       dev_error,
       handleChange,
       handleSubmit,
+      handleClose,
       isNew,
       isregist,
       isprint
@@ -39,6 +40,7 @@ class RepairBoard extends Component {
               client_id={client_id}
               handleChange={handleChange}
               handleSubmit={handleSubmit}
+              handleClose={handleClose}
             />
           )}
         />
@@ -54,6 +56,7 @@ class RepairBoard extends Component {
               contact={contact}
               handleChange={handleChange}
               handleSubmit={handleSubmit}
+              handleClose={handleClose}
             />
           )}
         />
@@ -72,6 +75,7 @@ class RepairBoard extends Component {
               repairId={repairId}
               product_brand={product_brand}
               dev_error={dev_error}
+              handleClose={handleClose}
             />
           )}
         />
@@ -88,6 +92,7 @@ class RepairBoard extends Component {
               repairId={repairId}
               product_brand={product_brand}
               dev_error={dev_error}
+              handleClose={handleClose}
             />
           )}
         />

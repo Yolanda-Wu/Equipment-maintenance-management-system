@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./style.scss";
 
 const AssignList = props => {
-  const { repairList, handleClick } = props;
+  const { repairList, handleClick, identify } = props;
 
   return (
     <div className="tr">
@@ -25,26 +25,31 @@ const AssignList = props => {
         }
         return (
           <div className="tr-tds" key={"tr-tds" + index}>
-            <div className="tr-td" key="tr-td-id">
+            <div className="tr-td id" key="tr-td-id">
               <label>{tds.order_num}</label>
             </div>
-            <div className="tr-td" key="tr-td-time">
+            <div className="tr-td time" key="tr-td-time">
               <label>{tds.repair_date}</label>
             </div>
-            <div className="tr-td" key="tr-td-status">
+            <div className="tr-td status" key="tr-td-status">
               <label>{status}</label>
             </div>
-            <div className="tr-td" key="tr-td-contact">
+            <div className="tr-td contact" key="tr-td-contact">
               <label>{tds.contact}</label>
             </div>
-            <div className="tr-td">
-              {tds.repair_status === "1" ? (
-                <i className="assign" id={tds.order_num} onClick={handleClick}>
-                  &#xe657;
-                </i>
-              ) : (
-                <></>
-              )}
+            <div className="tr-td assign">
+              {identify !== "4" &&
+                (tds.repair_status === "1" ? (
+                  <i
+                    className="assign"
+                    id={tds.order_num}
+                    onClick={handleClick}
+                  >
+                    &#xe657;
+                  </i>
+                ) : (
+                  <></>
+                ))}
             </div>
           </div>
         );

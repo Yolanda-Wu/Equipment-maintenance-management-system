@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Redirect, withRouter } from "react-router-dom";
 import RepairTable from "../../container/RepairTable";
 import RepairBoard from "../../container/RepairBoard";
 import {
   getRepairList,
   getClient,
   newClient,
-  addRepair
+  addRepair,
+  getUserInfo
 } from "../../api/index";
 import formatDate from "../../utils/formatDate";
 import "./style.scss";
@@ -28,7 +29,22 @@ class Admin extends Component {
     dev_error: "",
     isNew: false,
     isregist: false,
-    isprint: false
+    isprint: false,
+    identify: null
+  };
+  componentDidMount = () => {
+    getUserInfo()
+      .then(data => {
+        //this.setState(data);
+        const { identify } = data;
+        this.setState({ identify: identify });
+        if (identify === "4" && this.props.location.hash === "#/") {
+          window.location.href = "#/admin";
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
   handleChange = e => {
     let _class = e.target.name;
@@ -128,14 +144,27 @@ class Admin extends Component {
     }
   };
 
+  handleClose = () => {
+    this.setState({
+      isNew: false,
+      isregist: false,
+      isprint: false
+    });
+    window.location.href = "#/admin";
+  };
   render() {
+    console.log(this.state.identify);
     return (
       <div className="admin-wrap">
-        <RepairTable />
+        <RepairTable
+          handleClose={this.handleClose}
+          identify={this.state.identify}
+        />
         <RepairBoard
           {...this.state}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+          handleClose={this.handleClose}
         />
         {/* {isNew && <Redirect to="/admin/newclient" />}
         {isregist && <Redirect to="/admin/regist" />}
@@ -145,4 +174,4 @@ class Admin extends Component {
   }
 }
 
-export default Admin;
+export default withRouter(Admin);

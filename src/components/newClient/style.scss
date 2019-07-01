@@ -4,6 +4,7 @@
   height: 400px;
   background-color: white;
   border-radius: 8px;
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
@@ -17,6 +18,7 @@
     font-size: 2rem;
     text-align: center;
     margin: 20px;
+    color: #357a58;
   }
   .new-inputs {
     height: 200px;
@@ -26,12 +28,22 @@
       height: 30px;
       display: flex;
       justify-content: flex-start;
+      align-items: center;
       margin: 5px;
       label {
         width: 100px;
+        color: rgb(80, 78, 78);
+        line-height: 25px;
+        height: 25px;
       }
       input {
         width: 300px;
+        border: 1px solid rgb(80, 78, 78);
+        height: 25px;
+      }
+      input:hover,
+      input:focus {
+        border: 1px solid #357a58;
       }
     }
   }
@@ -47,5 +59,8 @@
       line-height: 30px;
       cursor: pointer;
     }
+  }
+  .new-btn:hover {
+    background-color: tomato;
   }
 }

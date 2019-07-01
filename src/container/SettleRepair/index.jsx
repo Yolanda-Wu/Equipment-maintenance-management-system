@@ -40,11 +40,14 @@ class SettleRepair extends Component {
       note,
       maintain_status
     } = this.state;
-    const { order_num, updateSettle } = this.props;
+    const { order_num, updateSettle, handleClose } = this.props;
     return (
       <>
         <div className="mask" />
         <div className="settle-wrap">
+          <i className="close" onClick={handleClose}>
+            &#xe8b7;
+          </i>
           <header className="settle-title">报修结算</header>
           <PickCertificate {...this.state} repairId={order_num} />
           <div className="maintain-info">
@@ -85,8 +88,17 @@ class SettleRepair extends Component {
                   value={material_cost}
                 />
               </div>
+              <div className="fee">
+                <label>共计</label>
+                <input
+                  type="text"
+                  name="cost"
+                  readOnly
+                  value={manual_cost + material_cost}
+                />
+              </div>
             </div>
-            <div className="fee">
+            {/* <div className="fee">
               <label>共计</label>
               <input
                 type="text"
@@ -94,7 +106,7 @@ class SettleRepair extends Component {
                 readOnly
                 value={manual_cost + material_cost}
               />
-            </div>
+            </div> */}
             <div className="note">
               <label>注意事项</label>
               <input type="text" name="note" readOnly value={note} />

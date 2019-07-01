@@ -51,12 +51,20 @@ class RepairTable extends Component {
       this.setState({
         order_num: ""
       });
+      window.location.reload();
     });
+  };
+  handleClose = () => {
+    this.setState({
+      order_num: ""
+    });
+    window.location.reload();
   };
 
   render() {
     const { pageCount, page, order_num } = this.state;
     const repairList = this.state.repairList.slice((page - 1) * 10, page * 10);
+    const { identify } = this.props;
     return (
       <>
         <div className="work-list">
@@ -83,6 +91,7 @@ class RepairTable extends Component {
           <RepairList
             repairList={repairList}
             handleSettle={this.handleSettle}
+            identify={identify}
           />
           <div className="index-wrap">
             <label className="prev" onClick={this.changePage}>
@@ -91,10 +100,10 @@ class RepairTable extends Component {
 
             <div>
               <label className="index-label">
-                第<span>{page}</span>页
+                第 <span>{page}</span> 页
               </label>
               <label className="page-count">
-                共<span>{pageCount}</span>页
+                共 <span>{pageCount}</span> 页
               </label>
             </div>
             <label className="next" onClick={this.changePage}>
@@ -102,10 +111,11 @@ class RepairTable extends Component {
             </label>
           </div>
         </div>
-        {order_num && (
+        {identify !== "4" && order_num && (
           <SettleRepair
             order_num={order_num}
             updateSettle={this.updateSettle}
+            handleClose={this.handleClose}
           />
         )}
       </>

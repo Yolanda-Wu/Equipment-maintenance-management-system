@@ -3,6 +3,7 @@
   width: 600px;
   height: 400px;
   background-color: white;
+  position: absolute;
   border-radius: 8px;
   top: 0;
   bottom: 0;
@@ -16,6 +17,7 @@
     font-size: 2rem;
     text-align: center;
     margin: 20px;
+    color: #357a58;
   }
   .print-btn {
     width: 100px;
@@ -23,11 +25,15 @@
     background-color: rgb(248, 133, 26);
     text-align: center;
     border-radius: 5px;
+    margin-top: 10px;
     cursor: pointer;
     label {
       color: white;
       line-height: 30px;
       cursor: pointer;
     }
+  }
+  .print-btn:hover {
+    background-color: tomato;
   }
 }

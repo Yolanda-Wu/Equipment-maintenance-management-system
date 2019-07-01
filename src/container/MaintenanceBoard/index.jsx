@@ -70,12 +70,15 @@ class MaintenanceBoard extends Component {
       note
     } = this.state;
 
-    const { order_num } = this.props;
+    const { order_num, handleClose } = this.props;
 
     return (
       <>
         <div className="mask" />
         <div className="maintain-box">
+          <i className="close" onClick={handleClose}>
+            &#xe8b7;
+          </i>
           <header>维修详情</header>
           <PickCertificate {...this.state} repairId={order_num} />
           <div className="maintain-info">

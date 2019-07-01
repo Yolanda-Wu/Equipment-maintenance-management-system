@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Redirect, withRouter } from "react-router-dom";
 import AssignTable from "../../container/AssignTable";
 import AssignBoard from "../../container/AssignBoard";
-import { getMaintainers, assignMaintainer } from "../../api/index";
+import { getMaintainers, assignMaintainer, getUserInfo } from "../../api/index";
 import formatDate from "../../utils/formatDate";
 import "./style.scss";
 
@@ -10,10 +10,26 @@ class Assign extends Component {
   state = {
     repairId: "",
     maintainer: "",
-    maintainers: []
+    maintainers: [],
+    identify: null
   };
 
   componentDidMount() {
+    getUserInfo()
+      .then(data => {
+        //this.setState(data);
+        const { identify, redirect_url } = data;
+        this.setState({ identify: identify });
+        if (identify === "4" && this.props.location.hash === "#/") {
+          window.location.href = "#/admin";
+        }
+        if (this.props.location.hash !== redirect_url && identify !== "4") {
+          window.location.href = redirect_url;
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
     getMaintainers().then(data => {
       //console.log(data.maintainers);
       this.setState({
@@ -53,15 +69,25 @@ class Assign extends Component {
       });
     });
   };
+  handleClose = () => {
+    this.setState({
+      repairId: ""
+    });
+    window.location.reload();
+  };
   render() {
     return (
       <div className="assign-wrap">
-        <AssignTable handleClick={this.handleClick} />
-        {this.state.repairId && (
+        <AssignTable
+          handleClick={this.handleClick}
+          identify={this.state.identify}
+        />
+        {this.state.identify !== "4" && this.state.repairId && (
           <AssignBoard
             {...this.state}
             handleChange={this.handleChange}
             handleAssign={this.handleAssign}
+            handleClose={this.handleClose}
           />
         )}
       </div>
@@ -69,4 +95,4 @@ class Assign extends Component {
   }
 }
 
-export default Assign;
+export default withRouter(Assign);

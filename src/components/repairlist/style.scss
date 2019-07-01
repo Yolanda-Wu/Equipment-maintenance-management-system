@@ -1,11 +1,13 @@
 .work-list {
-  width: 80vw;
+  width: 65vw;
   margin: auto;
-  border: 1px solid black;
+  background-color: white;
+  margin-top: 140px;
+  //border: 1px solid black;
   .list-title {
-    border: 1px solid black;
+    //border: 1px solid black;
     border-bottom: none;
-    background-color: rgb(248, 85, 26);
+    background: linear-gradient(#438a66, #73a58c);
     color: white;
     font-size: 1.4rem;
     height: 40px;
@@ -18,17 +20,18 @@
   .th {
     display: flex;
     height: 30px;
+    background: linear-gradient(#73a58c, #9bc9b2);
     .th-td {
       width: 20%;
-      font-size: 1.2rem;
-      border: 1px solid black;
+      font-size: 1rem;
+      //border: 1px solid black;
       border-top: none;
       // display: flex;
       // align-items: center;
       label {
         margin-left: 10px;
         line-height: 30px;
-        color: rgb(248, 85, 26);
+        color: white;
       }
     }
   }
@@ -39,12 +42,28 @@
       height: 10%;
       .tr-td {
         width: 20%;
-        border: 1px solid black;
+        font-size: 13px;
+        //border: 1px solid black;
         // display: flex;
         // align-items: center;
         label {
           margin-left: 10px;
           line-height: 30px;
+        }
+      }
+      .id,
+      .status,
+      .settle {
+        background-color: white;
+        label {
+          color: #6fa088;
+        }
+      }
+      .time,
+      .contact {
+        background-color: #86b69e;
+        label {
+          color: white;
         }
       }
     }
@@ -53,17 +72,27 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 30px;
-    div label {
-      margin: 0 10px;
-      span {
-        color: rgb(248, 85, 26);
+    height: 40px;
+    background: linear-gradient(#d5eee1, #73a58c);
+    div {
+      :hover {
+      }
+      label {
+        margin: 0 10px;
+        color: white;
+        span {
+          color: rgb(248, 85, 26);
+        }
       }
     }
     .prev,
     .next {
-      color: rgb(248, 85, 26);
-      cursor: pointer;
+      color: #666666;
+      //cursor: pointer;
+    }
+    .prev:hover,
+    .next:hover {
+      color: white;
     }
   }
 }

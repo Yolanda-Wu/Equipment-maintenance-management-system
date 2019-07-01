@@ -29,6 +29,7 @@ class LoginBox extends Component {
       // LocalStorage["jwt_token"] = jwt_token;
       //console.log(redirect_url);
       window.location.href = redirect_url;
+      window.location.reload();
     });
   };
 

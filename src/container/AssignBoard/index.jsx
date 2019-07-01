@@ -12,7 +12,13 @@ class AssignBoard extends Component {
     });
   }
   render() {
-    const { repairId, maintainers, handleChange, handleAssign } = this.props;
+    const {
+      repairId,
+      maintainers,
+      handleChange,
+      handleAssign,
+      handleClose
+    } = this.props;
 
     return (
       <>
@@ -20,6 +26,9 @@ class AssignBoard extends Component {
           <>
             <div className="mask" />
             <div className="assign-box">
+              <i className="close" onClick={handleClose}>
+                &#xe8b7;
+              </i>
               <header>分配维修人员</header>
               <div className="select">
                 <select onChange={handleChange}>

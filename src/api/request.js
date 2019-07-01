@@ -14,7 +14,7 @@ export const request = url => config =>
           .then(responseJson => {
             if (responseJson.status === 200) {
               resolve(responseJson.data);
-            } else if (res.status === 401) {
+            } else if (res.status === 401 || responseJson.status === 401) {
               if (window.location.hash !== "#/") {
                 window.location.href = "#/";
               }

@@ -11,6 +11,7 @@ const NewClient = props => {
     contact,
     handleChange,
     handleSubmit,
+    handleClose,
     isregist
   } = props;
   //const client_id = props.location.search.split("=")[1];
@@ -20,6 +21,9 @@ const NewClient = props => {
       {isregist && <Redirect to="/admin/regist" />}
       <div className="mask" />
       <div className="new-client-wrap">
+        <i className="close" onClick={handleClose}>
+          &#xe8b7;
+        </i>
         <header className="new-title">添加新客户</header>
         <div className="new-inputs">
           <div className="new-id">

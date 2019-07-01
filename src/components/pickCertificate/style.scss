@@ -1,12 +1,19 @@
 .certificate-board {
   width: 80%;
-  border: 1px solid black;
-  background-color: rgb(219, 217, 217);
-  margin: 0 0 30px;
-  .regist-list {
+  border: 1px solid #9bc9b2;
+  background-color: #73a58c;
+  padding: 10px;
+  margin: 0;
+  .regist-title {
     width: 100%;
     margin: 5px 0;
     text-align: center;
+    border: 1px solid #9bc9b2;
+    color: white;
+    label {
+      height: 30px;
+      line-height: 30px;
+    }
   }
   .regist-info {
     width: 100%;
@@ -15,30 +22,39 @@
     //border-bottom: 0.5px solid black;
     .regist-left {
       width: 50%;
-      border-right: 1px solid black;
       div {
-        border-top: 1px solid black;
+        border: 1px solid #9bc9b2;
         //border-bottom: 0.5px solid black;
         display: flex;
         label {
           flex-grow: 1;
+          color: white;
+          height: 25px;
+          line-height: 25px;
         }
         input {
           flex-grow: 2;
+          border: none;
+          height: 25px;
         }
       }
     }
     .regist-right {
       width: 50%;
       div {
-        border-top: 1px solid black;
+        border: 1px solid #9bc9b2;
         //border-bottom: 0.5px solid black;
         display: flex;
         label {
           flex-grow: 1;
+          color: white;
+          height: 25px;
+          line-height: 25px;
         }
         input {
           flex-grow: 2;
+          border: none;
+          height: 25px;
         }
       }
     }
@@ -46,13 +62,15 @@
   .machine-err {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid black;
+    border: 1px solid #9bc9b2;
     label {
       margin: 5px 0;
       text-align: center;
+      color: white;
     }
     input {
-      border-top: 1px solid black;
+      border: none;
+      border-top: 1px solid #9bc9b2;
       height: 40px;
     }
   }

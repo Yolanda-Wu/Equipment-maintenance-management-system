@@ -6,7 +6,7 @@ const Login = props => {
   const { handleChange, handleSubmit, account, password } = props;
   return (
     <div className="login-wrap">
-      <img className="login-icon" src={Icon} />
+      <i className="login-icon">&#xe643;</i>
       <div className="accountBox">
         <i className="a-icon">&#xe6e0;</i>
         <input

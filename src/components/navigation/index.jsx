@@ -4,13 +4,17 @@ import favicon from "../../assets/favicon.png";
 import "./style.scss";
 
 const Navigation = props => {
-  const { nickname, avator, handleLogout, handleClick } = props;
+  const { nickname, avator, handleLogout, handleClick, identify } = props;
   let AdminRight = () => {
     return (
       <>
-        <Link to="/admin/inquiry">
-          <i className="operate">&#xe601;</i>
-        </Link>
+        {identify !== "4" ? (
+          <Link to="/admin/inquiry">
+            <i className="operate">&#xe601;</i>
+          </Link>
+        ) : (
+          <></>
+        )}
         <div className="userInfo">
           <span id="nickname">{nickname}</span>
           <span className="logout">

@@ -3,6 +3,7 @@
   width: 600px;
   height: 450px;
   background-color: white;
+  position: absolute;
   border-radius: 8px;
   top: 0;
   bottom: 0;
@@ -16,6 +17,7 @@
     font-size: 2rem;
     text-align: center;
     margin: 20px;
+    color: #357a58;
   }
   .select {
     display: flex;
@@ -40,6 +42,9 @@
         line-height: 30px;
         cursor: pointer;
       }
+    }
+    .assign-btn:hover {
+      background-color: tomato;
     }
   }
 }

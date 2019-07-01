@@ -4,13 +4,17 @@ import RepairRow from "../repairRow";
 import "./style.scss";
 
 const RepairList = props => {
-  const { repairList, handleSettle } = props;
+  const { repairList, handleSettle, identify } = props;
 
   return (
     <div className="tr">
       {repairList.map((tds, index) => (
         <div className="tr-tds" key={"tr-tds" + index}>
-          <RepairRow tds={tds} handleSettle={handleSettle} />
+          <RepairRow
+            tds={tds}
+            handleSettle={handleSettle}
+            identify={identify}
+          />
         </div>
       ))}
     </div>

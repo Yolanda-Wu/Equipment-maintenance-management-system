@@ -1,14 +1,83 @@
 @font-face {
   font-family: "iconfont"; /* project id 1249425 */
-  src: url("//at.alicdn.com/t/font_1249425_n8jgzcvbqw.eot");
-  src: url("//at.alicdn.com/t/font_1249425_n8jgzcvbqw.eot?#iefix")
+  src: url("//at.alicdn.com/t/font_1249425_gayn078nvz.eot");
+  src: url("//at.alicdn.com/t/font_1249425_gayn078nvz.eot?#iefix")
       format("embedded-opentype"),
-    url("//at.alicdn.com/t/font_1249425_n8jgzcvbqw.woff2") format("woff2"),
-    url("//at.alicdn.com/t/font_1249425_n8jgzcvbqw.woff") format("woff"),
-    url("//at.alicdn.com/t/font_1249425_n8jgzcvbqw.ttf") format("truetype"),
-    url("//at.alicdn.com/t/font_1249425_n8jgzcvbqw.svg#iconfont") format("svg");
+    url("//at.alicdn.com/t/font_1249425_gayn078nvz.woff2") format("woff2"),
+    url("//at.alicdn.com/t/font_1249425_gayn078nvz.woff") format("woff"),
+    url("//at.alicdn.com/t/font_1249425_gayn078nvz.ttf") format("truetype"),
+    url("//at.alicdn.com/t/font_1249425_gayn078nvz.svg#iconfont") format("svg");
 }
 
 .App {
-  margin-top: 100px;
+  margin-top: 55px;
+  a {
+    text-decoration: none;
+  }
+  .bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #e2f5ec71;
+    z-index: -1;
+  }
+  .left-nav {
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    background-color: #87c4a6af;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    .top {
+      height: 140px;
+    }
+    .left-repair-settle,
+    .left-maintain {
+      background-color: #357a58;
+      height: 40px;
+      label {
+        color: white;
+        line-height: 40px;
+        margin-left: 30px;
+        cursor: pointer;
+      }
+    }
+    .left-assign,
+    .left-operate {
+      //background-color: #357a58;
+      height: 40px;
+      label {
+        color: #357a58;
+        line-height: 40px;
+        margin-left: 30px;
+        cursor: pointer;
+      }
+    }
+  }
+  .work-page {
+    width: 80vw;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: -1;
+  }
+}
+.close {
+  font-family: "iconfont" !important;
+  font-size: 25px;
+  color: tomato;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  z-index: 1;
+  cursor: pointer;
 }

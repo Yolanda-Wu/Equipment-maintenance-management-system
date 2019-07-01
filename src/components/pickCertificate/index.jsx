@@ -14,9 +14,9 @@ const PickCertificate = props => {
   } = props;
   return (
     <div className="certificate-board">
-      <div className="regist-list">
+      {/* <div className="regist-title">
         <label>东软计算机有限公司取机凭证</label>
-      </div>
+      </div> */}
       <div className="regist-info">
         <div className="regist-left">
           <div className="accept-time">

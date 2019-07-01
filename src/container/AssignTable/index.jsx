@@ -40,7 +40,7 @@ class AssignTable extends Component {
   render() {
     const { pageCount, page } = this.state;
     const repairList = this.state.repairList.slice((page - 1) * 10, page * 10);
-    const { handleClick } = this.props;
+    const { handleClick, identify } = this.props;
     return (
       <div className="work-list">
         <div className="list-title">
@@ -63,7 +63,12 @@ class AssignTable extends Component {
             <label>分配</label>
           </div>
         </div>
-        <AssignList repairList={repairList} handleClick={handleClick} />
+        <AssignList
+          repairList={repairList}
+          handleClick={handleClick}
+          identify={identify}
+        />
+
         <div className="index-wrap">
           <label className="prev" onClick={this.changePage}>
             上一页
@@ -71,10 +76,10 @@ class AssignTable extends Component {
 
           <div>
             <label className="index-label">
-              第<span>{page}</span>页
+              第 <span>{page}</span> 页
             </label>
             <label className="page-count">
-              共<span>{pageCount}</span>页
+              共 <span>{pageCount}</span> 页
             </label>
           </div>
           <label className="next" onClick={this.changePage}>

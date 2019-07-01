@@ -47,6 +47,21 @@
           line-height: 30px;
         }
       }
+      .id,
+      .status,
+      .assign {
+        background-color: white;
+        label {
+          color: #6fa088;
+        }
+      }
+      .time,
+      .contact {
+        background-color: #86b69e;
+        label {
+          color: white;
+        }
+      }
     }
   }
   .index-wrap {
@@ -62,7 +77,7 @@
     }
     .prev,
     .next {
-      color: rgb(248, 85, 26);
+      color: #666666;
       cursor: pointer;
     }
   }

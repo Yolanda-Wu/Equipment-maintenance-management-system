@@ -44,7 +44,7 @@ class EngineerTable extends Component {
       (page - 1) * 10,
       page * 10
     );
-    const { handleClick } = this.props;
+    const { handleClick, identify } = this.props;
     return (
       <div className="work-list">
         <div className="list-title">
@@ -70,6 +70,7 @@ class EngineerTable extends Component {
         <MaintenancesList
           maintenancesList={maintenancesList}
           handleClick={handleClick}
+          identify={identify}
         />
         <div className="index-wrap">
           <label className="prev" onClick={this.changePage}>
@@ -78,10 +79,10 @@ class EngineerTable extends Component {
 
           <div>
             <label className="index-label">
-              第<span>{page}</span>页
+              第 <span>{page}</span> 页
             </label>
             <label className="page-count">
-              共<span>{pageCount}</span>页
+              共 <span>{pageCount}</span> 页
             </label>
           </div>
           <label className="next" onClick={this.changePage}>
