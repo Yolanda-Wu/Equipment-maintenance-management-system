@@ -58,7 +58,7 @@ class RepairTable extends Component {
     this.setState({
       order_num: ""
     });
-    window.location.reload();
+    //window.location.reload();
   };
 
   render() {

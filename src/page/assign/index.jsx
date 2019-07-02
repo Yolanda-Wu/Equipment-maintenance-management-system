@@ -17,9 +17,9 @@ class Assign extends Component {
   componentDidMount() {
     getUserInfo()
       .then(data => {
-        //this.setState(data);
+        this.setState(data);
         const { identify, redirect_url } = data;
-        this.setState({ identify: identify });
+        //this.setState({ identify: identify });
         if (identify === "4" && this.props.location.hash === "#/") {
           window.location.href = "#/admin";
         }
@@ -67,13 +67,14 @@ class Assign extends Component {
         repairId: "",
         maintainer: ""
       });
+      window.location.reload();
     });
   };
   handleClose = () => {
     this.setState({
       repairId: ""
     });
-    window.location.reload();
+    //window.location.reload();
   };
   render() {
     return (

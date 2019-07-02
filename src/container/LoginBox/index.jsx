@@ -25,11 +25,15 @@ class LoginBox extends Component {
 
   handleSubmit = event => {
     login(this.state).then(data => {
-      const { redirect_url } = data;
-      // LocalStorage["jwt_token"] = jwt_token;
-      //console.log(redirect_url);
-      window.location.href = redirect_url;
-      window.location.reload();
+      if (!data.status) {
+        const { redirect_url } = data;
+        // LocalStorage["jwt_token"] = jwt_token;
+        //console.log(redirect_url);
+        window.location.href = redirect_url;
+        this.props.refreshNav();
+      } else {
+        alert("密码或用户名错误！");
+      }
     });
   };
 

@@ -8,6 +8,11 @@
   -moz-osx-font-smoothing: grayscale;
   margin: 0 10px;
   cursor: pointer;
+  line-height: 30px;
+}
+
+#tosettle:hover {
+  color: rgb(172, 65, 27);
 }
 
 #settled {
@@ -20,6 +25,10 @@
   -moz-osx-font-smoothing: grayscale;
   margin: 0 10px;
   cursor: pointer;
+  line-height: 30px;
+}
+#settled:hover {
+  color: rgb(22, 107, 55);
 }
 
 #unsettle {
@@ -32,4 +41,5 @@
   -moz-osx-font-smoothing: grayscale;
   margin: 0 10px;
   cursor: pointer;
+  line-height: 30px;
 }

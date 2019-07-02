@@ -1,14 +1,14 @@
 .certificate-board {
   width: 80%;
-  border: 1px solid #9bc9b2;
-  background-color: #73a58c;
+  border: 1px solid #9bb0c9;
+  background-color: #61788f;
   padding: 10px;
   margin: 0;
   .regist-title {
     width: 100%;
     margin: 5px 0;
     text-align: center;
-    border: 1px solid #9bc9b2;
+    border: 1px solid #9bc0c9;
     color: white;
     label {
       height: 30px;
@@ -23,7 +23,7 @@
     .regist-left {
       width: 50%;
       div {
-        border: 1px solid #9bc9b2;
+        border: 1px solid #9bb0c9;
         //border-bottom: 0.5px solid black;
         display: flex;
         label {
@@ -36,13 +36,14 @@
           flex-grow: 2;
           border: none;
           height: 25px;
+          background-color: #ccdbe4;
         }
       }
     }
     .regist-right {
       width: 50%;
       div {
-        border: 1px solid #9bc9b2;
+        border: 1px solid #9bb0c9;
         //border-bottom: 0.5px solid black;
         display: flex;
         label {
@@ -55,6 +56,7 @@
           flex-grow: 2;
           border: none;
           height: 25px;
+          background-color: #ccdbe4;
         }
       }
     }
@@ -62,7 +64,7 @@
   .machine-err {
     display: flex;
     flex-direction: column;
-    border: 1px solid #9bc9b2;
+    border: 1px solid #9bb0c9;
     label {
       margin: 5px 0;
       text-align: center;
@@ -70,8 +72,9 @@
     }
     input {
       border: none;
-      border-top: 1px solid #9bc9b2;
+      border: 1px solid #9bb0c9;
       height: 40px;
+      background-color: #ccdbe4;
     }
   }
 }

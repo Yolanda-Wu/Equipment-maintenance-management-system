@@ -37,7 +37,7 @@ const AssignList = props => {
             <div className="tr-td contact" key="tr-td-contact">
               <label>{tds.contact}</label>
             </div>
-            <div className="tr-td assign">
+            <div className="tr-td t-assign">
               {identify !== "4" &&
                 (tds.repair_status === "1" ? (
                   <i

@@ -7,31 +7,33 @@
   .list-title {
     //border: 1px solid black;
     border-bottom: none;
-    background: linear-gradient(#438a66, #73a58c);
+    // background: linear-gradient(#438a66, #73a58c);
+    background-color: #48719b;
     color: white;
     font-size: 1.4rem;
-    height: 40px;
+    height: 50px;
 
     label {
       margin-left: 20px;
-      line-height: 40px;
+      line-height: 50px;
     }
   }
   .th {
     display: flex;
     height: 30px;
-    background: linear-gradient(#73a58c, #9bc9b2);
+    //background: linear-gradient(#73a58c, #9bc9b2);
+    background-color: #bee1ecd3;
     .th-td {
       width: 20%;
       font-size: 1rem;
-      //border: 1px solid black;
+      border: 1px solid #48719b;
       border-top: none;
       // display: flex;
       // align-items: center;
       label {
         margin-left: 10px;
         line-height: 30px;
-        color: white;
+        color: #225551;
       }
     }
   }
@@ -54,14 +56,14 @@
       .id,
       .status,
       .settle {
-        background-color: white;
+        background-color: #d4f7fac0;
         label {
-          color: #6fa088;
+          color: #509494;
         }
       }
       .time,
       .contact {
-        background-color: #86b69e;
+        background-color: #86b0b6;
         label {
           color: white;
         }
@@ -73,7 +75,8 @@
     justify-content: space-around;
     align-items: center;
     height: 40px;
-    background: linear-gradient(#d5eee1, #73a58c);
+    // background: linear-gradient(#d5eee1, #73a58c);
+    background-color: #48719b;
     div {
       :hover {
       }
@@ -81,18 +84,18 @@
         margin: 0 10px;
         color: white;
         span {
-          color: rgb(248, 85, 26);
+          color: white;
         }
       }
     }
     .prev,
     .next {
-      color: #666666;
-      //cursor: pointer;
+      color: white;
+      cursor: pointer;
     }
     .prev:hover,
     .next:hover {
-      color: white;
+      color: rgb(248, 85, 26);
     }
   }
 }

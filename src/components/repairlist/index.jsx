@@ -17,6 +17,26 @@ const RepairList = props => {
           />
         </div>
       ))}
+      {/* <div className="tr-tds">
+        <div className="tr-td id" id="tr-td-id">
+          <label>{"tds.order_num"}</label>
+        </div>
+        <div className="tr-td time" id="tr-td-time">
+          <label>{"tds.repair_date"}</label>
+        </div>
+        <div className="tr-td status" id="tr-td-status">
+          <label>{"status"}</label>
+        </div>
+        <div className="tr-td contact" id="tr-td-contact">
+          <label>{"tds.contact"}</label>
+        </div>
+
+        <div className="tr-td status" id="tr-td-status">
+          <i id="tosettle" className={"tds.order_num"} onClick={handleSettle}>
+            &#xe61b;
+          </i>
+        </div>
+      </div> */}
     </div>
   );
 };

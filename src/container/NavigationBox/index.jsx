@@ -15,34 +15,21 @@ class NavigationBox extends Component {
   };
 
   componentDidMount() {
-    getUserInfo()
-      .then(data => {
-        this.setState(data);
-        const { identify, redirect_url } = data;
-        switch (identify) {
-          case "1":
-            this.setState({ avator: AdminAvator });
-            break;
-          case "2":
-            this.setState({ avator: AssignAvator });
-            break;
-          case "3":
-            this.setState({ avator: EngineerAvator });
-            break;
-          case "4":
-            this.setState({ avator: OperatorAvator });
-            break;
-        }
-        if (identify === "4" && this.props.location.hash === "#/") {
-          window.location.href = "#/admin";
-        }
-        if (this.props.location.hash !== redirect_url && identify !== "4") {
-          window.location.href = redirect_url;
-        }
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    // getUserInfo()
+    //   .then(data => {
+    //this.setState(this.props);
+    const { identify, redirect_url } = this.props;
+    if (identify === "4" && this.props.location.hash === "#/") {
+      window.location.href = "#/admin";
+    }
+    if (this.props.location.hash !== redirect_url && identify !== "4") {
+      window.location.href = redirect_url;
+    }
+
+    // })
+    // .catch(err => {
+    //   console.log(err);
+    // });
   }
 
   handleClick = e => {
@@ -56,7 +43,26 @@ class NavigationBox extends Component {
   };
 
   render() {
-    const { user_name, avator, identify } = this.state;
+    const { user_name, identify } = this.props;
+    //const { identify, redirect_url } = this.props;
+    console.log(this.props);
+    let avator = null;
+    if (identify) {
+      switch (identify) {
+        case "1":
+          avator = AdminAvator;
+          break;
+        case "2":
+          avator = AssignAvator;
+          break;
+        case "3":
+          avator = EngineerAvator;
+          break;
+        case "4":
+          avator = OperatorAvator;
+          break;
+      }
+    }
     return (
       <Navigation
         nickname={user_name}

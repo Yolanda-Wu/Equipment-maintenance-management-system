@@ -94,7 +94,7 @@ class SettleRepair extends Component {
                   type="text"
                   name="cost"
                   readOnly
-                  value={manual_cost + material_cost}
+                  value={parseFloat(manual_cost) + parseFloat(material_cost)}
                 />
               </div>
             </div>

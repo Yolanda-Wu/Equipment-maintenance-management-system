@@ -1,7 +1,7 @@
 .maintain-box {
   position: fixed;
   width: 600px;
-  height: 85vh;
+  height: 87vh;
   position: absolute;
   background-color: white;
   border-radius: 8px;
@@ -14,21 +14,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
   header {
     font-size: 1.3rem;
     text-align: center;
     margin: 10px;
-    color: #357a58;
+    color: #2d547c;
   }
-
   .maintain-info {
     width: 80%;
-    border: 1px solid #9bc9b2;
-    background-color: #73a58c;
+    //border: 1px solid #9bc9b2;
+    background-color: #61788f;
     padding: 10px;
     div {
       // width: 100%;
       //height: 50px;
+      border: 1px solid #9bb0c9;
       display: flex;
       flex-direction: column;
       label {
@@ -87,5 +88,8 @@
     #finish-btn {
       background-color: rgb(255, 84, 53);
     }
+  }
+  .btns div {
+    background-color: rgb(153, 57, 40);
   }
 }

@@ -9,8 +9,8 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     publicPath: "/"
   },
-  mode: "development",
-  // mode: "production",
+  // mode: "development",
+  mode: "production",
   devtool: "cheap-module-eval-source-map",
   devServer: {
     // before(app) {

@@ -10,15 +10,17 @@ import "./App.scss";
 
 class App extends Component {
   state = {
-    identify: null
+    identify: null,
+    user_name: "",
+    redirect_url: ""
   };
 
   componentDidMount() {
     getUserInfo()
       .then(data => {
         this.setState(data);
-        const { identify, redirect_url } = data;
-        this.setState({ identify: identify });
+        const { redirect_url } = data;
+        //this.setState({ identify: identify });
         if (this.props.location.hash !== redirect_url) {
           window.location.href = redirect_url;
         }
@@ -28,12 +30,26 @@ class App extends Component {
       });
   }
 
+  refreshNav = () => {
+    getUserInfo()
+      .then(data => {
+        this.setState(data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
   render() {
     return (
       <HashRouter>
         <div className="App">
           <div className="bg" />
-          <Route exact path="/" component={Login} />
+          <Route
+            exact
+            path="/"
+            render={() => <Login refreshNav={this.refreshNav} />}
+          />
           <Route
             path="/:route"
             render={() => (
@@ -78,7 +94,7 @@ class App extends Component {
               </div>
             )}
           />
-          <Navigation />
+          <Navigation {...this.state} />
           <div className="work-page">
             <Route exact path="/admin" component={Admin} />
             <Route path="/admin/:page" component={Admin} />

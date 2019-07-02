@@ -18,6 +18,8 @@ export const request = url => config =>
               if (window.location.hash !== "#/") {
                 window.location.href = "#/";
               }
+            } else if (res.status === 400 || responseJson.status === 400) {
+              resolve(responseJson);
             } else {
               resolve(responseJson.err_msg);
             }

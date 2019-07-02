@@ -9,7 +9,9 @@
   margin: 0 10px;
   cursor: pointer;
 }
-
+.assign:hover {
+  color: rgb(172, 65, 27);
+}
 .assigned {
   font-family: "iconfont" !important;
   font-size: 20px;
@@ -19,4 +21,7 @@
   -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
   margin: 0 10px;
+}
+.assigned:hover {
+  color: rgb(22, 107, 55);
 }

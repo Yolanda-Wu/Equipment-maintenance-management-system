@@ -12,7 +12,7 @@
     font-family: "iconfont" !important;
     font-size: 60px;
     margin: 30px 0 30px;
-    color: #438a66;
+    color: #2d547c;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -webkit-text-stroke-width: 0.2px;
@@ -32,19 +32,20 @@
   .account {
     width: 200px;
     height: 30px;
-    border: 1px solid #438a66;
+    border: 1px solid #2d547c;
     margin-left: 10px;
-
-    :focus,
-    :hover {
-      border: 1px solid rgb(248, 85, 26);
-    }
+  }
+  .password:focus,
+  .account:focus,
+  .password:hover,
+  .account:hover {
+    border: 1px solid rgb(248, 85, 26);
   }
   .a-icon,
   .p-icon {
     font-family: "iconfont" !important;
     font-size: 30px;
-    color: #438a66;
+    color: #2d547c;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -webkit-text-stroke-width: 0.2px;

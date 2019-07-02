@@ -11,7 +11,7 @@ class Login extends Component {
     return (
       <div className="Login-wrap">
         {/* <img className="left-img" src={Left} /> */}
-        <LoginBox />
+        <LoginBox {...this.props} />
       </div>
     );
   }
