@@ -43,9 +43,7 @@ class AssignTable extends Component {
     const { handleClick, identify } = this.props;
     return (
       <div className="work-list">
-        <div className="list-title">
-          <label>报修单列表</label>
-        </div>
+        <div className="list-title" />
         <div className="th">
           <div className="th-td" key={"th-td-repairId"}>
             <label>报修单编号</label>

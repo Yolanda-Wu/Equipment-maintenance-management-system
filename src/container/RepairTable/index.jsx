@@ -68,9 +68,7 @@ class RepairTable extends Component {
     return (
       <>
         <div className="work-list">
-          <div className="list-title">
-            <label>报修单列表</label>
-          </div>
+          <div className="list-title" />
           <div className="th">
             <div className="th-td" key={"th-td-repairId"}>
               <label>报修单编号</label>
@@ -82,7 +80,7 @@ class RepairTable extends Component {
               <label>报修状态</label>
             </div>
             <div className="th-td" key={"th-td-constact"}>
-              <label>联系人</label>
+              <label>客户</label>
             </div>
             <div className="th-td" key={"th-td-settle"}>
               <label>结算</label>

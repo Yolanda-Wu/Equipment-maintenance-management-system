@@ -35,7 +35,7 @@ const MaintenanceList = props => {
               <label>{status}</label>
             </div>
             <div className="tr-td contact" key="tr-td-contact">
-              <label>{tds.maintainer}</label>
+              <label>{tds.contact}</label>
             </div>
             <div className="tr-td change">
               {identify !== "4" &&

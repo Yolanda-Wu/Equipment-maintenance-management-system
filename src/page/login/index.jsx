@@ -10,8 +10,12 @@ class Login extends Component {
   render() {
     return (
       <div className="Login-wrap">
-        {/* <img className="left-img" src={Left} /> */}
         <LoginBox {...this.props} />
+        <div className="icons">
+          <i className="mean-icon">&#xe600;</i>
+          <i className="camera-icon">&#xe64b;</i>
+          <i className="computer-icon">&#xe60c;</i>
+        </div>
       </div>
     );
   }

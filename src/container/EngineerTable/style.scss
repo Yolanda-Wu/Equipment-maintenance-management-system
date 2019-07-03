@@ -1,66 +1,80 @@
 .work-list {
   width: 80vw;
   margin: auto;
-  border: 1px solid black;
+  margin-top: 140px;
+  //border: 1px solid black;
+  border-radius: 15px;
+  box-shadow: 10px 10px 20px 1px rgb(43, 48, 61);
   .list-title {
-    border: 1px solid black;
+    border-radius: 15px 15px 0 0;
     border-bottom: none;
-    background-color: rgb(248, 85, 26);
-    color: white;
+    // background-color: rgb(111, 117, 129);
+    background-color: rgb(97, 105, 128);
     font-size: 1.4rem;
-    height: 40px;
+    height: 50px;
 
     label {
       margin-left: 20px;
-      line-height: 40px;
+      line-height: 50px;
     }
   }
   .th {
     display: flex;
     height: 30px;
+    background-color: rgb(138, 145, 158);
     .th-td {
       width: 20%;
-      font-size: 1.2rem;
-      border: 1px solid black;
+      font-size: 1rem;
+      border: 1.5px solid rgb(241, 245, 247);
       border-top: none;
-      // display: flex;
-      // align-items: center;
       label {
         margin-left: 10px;
         line-height: 30px;
-        color: rgb(248, 85, 26);
+        color: rgb(241, 245, 247);
       }
     }
-    .id,
-    .status,
-    .change {
-      background-color: white;
-      label {
-        color: #6fa088;
-      }
+    :first-child {
+      border-left: none;
     }
-    .time,
-    .contact {
-      background-color: #86b69e;
-      label {
-        color: white;
-      }
+    :last-child {
+      border-right: none;
     }
   }
   .tr {
-    height: 300px;
+    height: 330px;
+    background-color: rgb(241, 245, 247);
     .tr-tds {
       display: flex;
       height: 10%;
       .tr-td {
         width: 20%;
-        border: 1px solid black;
-        // display: flex;
-        // align-items: center;
+        font-size: 13px;
+        border: 1.5px solid rgb(241, 245, 247);
         label {
           margin-left: 10px;
           line-height: 30px;
         }
+      }
+      .id,
+      .status,
+      .change {
+        background-color: rgb(171, 184, 190);
+        label {
+          color: rgb(241, 245, 247);
+        }
+      }
+      .time,
+      .contact {
+        background-color: rgb(214, 223, 228);
+        label {
+          color: rgb(102, 123, 133);
+        }
+      }
+      .id {
+        border-left: none;
+      }
+      .settle {
+        border-right: none;
       }
     }
   }
@@ -68,17 +82,27 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 30px;
-    div label {
-      margin: 0 10px;
-      span {
-        color: rgb(248, 85, 26);
+    height: 40px;
+    border-radius: 0 0 15px 15px;
+    //background-color: rgb(72, 80, 102);
+    background-color: rgb(97, 105, 128);
+    div {
+      label {
+        margin: 0 10px;
+        color: white;
+        span {
+          color: white;
+        }
       }
     }
     .prev,
     .next {
-      color: #666666;
+      color: white;
       cursor: pointer;
+    }
+    .prev:hover,
+    .next:hover {
+      color: rgb(255, 240, 4);
     }
   }
 }

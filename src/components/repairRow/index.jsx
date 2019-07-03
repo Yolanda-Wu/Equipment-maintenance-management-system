@@ -36,7 +36,7 @@ const RepairRow = props => {
         <label>{tds.contact}</label>
       </div>
 
-      <div className="tr-td status" id="tr-td-status">
+      <div className="tr-td settle" id="tr-td-settle">
         {identify !== "4" &&
           (tds.repair_status === "3" ? (
             <i id="tosettle" className={tds.order_num} onClick={handleSettle}>

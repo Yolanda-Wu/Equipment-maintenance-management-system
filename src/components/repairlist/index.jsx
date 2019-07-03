@@ -31,8 +31,8 @@ const RepairList = props => {
           <label>{"tds.contact"}</label>
         </div>
 
-        <div className="tr-td status" id="tr-td-status">
-          <i id="tosettle" className={"tds.order_num"} onClick={handleSettle}>
+        <div className="tr-td settle" id="tr-td-status">
+          <i id="unsettle" className={"tds.order_num"} onClick={handleSettle}>
             &#xe61b;
           </i>
         </div>

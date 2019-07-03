@@ -1,8 +1,9 @@
 .certificate-board {
-  width: 80%;
-  border: 1px solid #9bb0c9;
-  background-color: #61788f;
-  padding: 10px;
+  width: 560px;
+  //border: 1px solid #9bb0c9;
+  background-color: rgb(206, 212, 223);
+  padding: 20px;
+  border-radius: 8px;
   margin: 0;
   .regist-title {
     width: 100%;
@@ -16,47 +17,58 @@
     }
   }
   .regist-info {
-    width: 100%;
+    // width: 100%;
+    border: 1px solid #9bb0c9;
     display: flex;
+    justify-content: space-around;
     //border-top: 0.5px solid black;
     //border-bottom: 0.5px solid black;
     .regist-left {
-      width: 50%;
+      width: 45%;
       div {
-        border: 1px solid #9bb0c9;
+        //border: 1px solid #9bb0c9;
         //border-bottom: 0.5px solid black;
         display: flex;
+        margin: 10px 0;
         label {
-          flex-grow: 1;
-          color: white;
+          //flex-grow: 1;
+          color: #7689a0;
           height: 25px;
           line-height: 25px;
+          margin: 0 5px;
         }
         input {
-          flex-grow: 2;
+          //flex-grow: 2;
+          padding: 0 0 0 5px;
           border: none;
           height: 25px;
           background-color: #ccdbe4;
+          border: 1px solid #9bb0c9;
+          border-radius: 4px;
         }
       }
     }
     .regist-right {
-      width: 50%;
+      width: 45%;
       div {
-        border: 1px solid #9bb0c9;
-        //border-bottom: 0.5px solid black;
+        //border: 1px solid #9bb0c9;
+        margin: 10px 0;
         display: flex;
         label {
-          flex-grow: 1;
-          color: white;
+          //flex-grow: 1;
+          color: #7689a0;
           height: 25px;
           line-height: 25px;
+          margin: 0 5px;
         }
         input {
-          flex-grow: 2;
+          // flex-grow: 2;
+          padding: 0 0 0 5px;
           border: none;
           height: 25px;
           background-color: #ccdbe4;
+          border: 1px solid #9bb0c9;
+          border-radius: 4px;
         }
       }
     }
@@ -64,17 +76,18 @@
   .machine-err {
     display: flex;
     flex-direction: column;
-    border: 1px solid #9bb0c9;
+    //border: 1px solid #9bb0c9;
     label {
       margin: 5px 0;
       text-align: center;
-      color: white;
+      color: #7689a0;
     }
     input {
       border: none;
       border: 1px solid #9bb0c9;
-      height: 40px;
+      height: 50px;
       background-color: #ccdbe4;
+      border-radius: 4px;
     }
   }
 }

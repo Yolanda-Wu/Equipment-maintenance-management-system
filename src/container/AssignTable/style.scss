@@ -1,15 +1,15 @@
 .work-list {
-  width: 65vw;
+  width: 80vw;
   margin: auto;
-  background-color: white;
   margin-top: 140px;
   //border: 1px solid black;
+  border-radius: 15px;
+  box-shadow: 10px 10px 20px 1px rgb(43, 48, 61);
   .list-title {
-    //border: 1px solid black;
+    border-radius: 15px 15px 0 0;
     border-bottom: none;
-    // background: linear-gradient(#438a66, #73a58c);
-    background-color: #48719b;
-    color: white;
+    // background-color: rgb(111, 117, 129);
+    background-color: rgb(97, 105, 128);
     font-size: 1.4rem;
     height: 50px;
 
@@ -21,33 +21,35 @@
   .th {
     display: flex;
     height: 30px;
-    //background: linear-gradient(#73a58c, #9bc9b2);
-    background-color: #bee1ecd3;
+    background-color: rgb(138, 145, 158);
     .th-td {
       width: 20%;
       font-size: 1rem;
-      border: 1px solid #48719b;
+      border: 1.5px solid rgb(241, 245, 247);
       border-top: none;
-      // display: flex;
-      // align-items: center;
       label {
         margin-left: 10px;
         line-height: 30px;
-        color: #225551;
+        color: rgb(241, 245, 247);
       }
+    }
+    :first-child {
+      border-left: none;
+    }
+    :last-child {
+      border-right: none;
     }
   }
   .tr {
-    height: 300px;
+    height: 330px;
+    background-color: rgb(241, 245, 247);
     .tr-tds {
       display: flex;
       height: 10%;
       .tr-td {
         width: 20%;
         font-size: 13px;
-        //border: 1px solid black;
-        // display: flex;
-        // align-items: center;
+        border: 1.5px solid rgb(241, 245, 247);
         label {
           margin-left: 10px;
           line-height: 30px;
@@ -56,17 +58,23 @@
       .id,
       .status,
       .t-assign {
-        background-color: #d4f7fac0;
+        background-color: rgb(171, 184, 190);
         label {
-          color: #6fa088;
+          color: rgb(241, 245, 247);
         }
       }
       .time,
       .contact {
-        background-color: #86b69e;
+        background-color: rgb(214, 223, 228);
         label {
-          color: white;
+          color: rgb(102, 123, 133);
         }
+      }
+      .id {
+        border-left: none;
+      }
+      .settle {
+        border-right: none;
       }
     }
   }
@@ -75,11 +83,10 @@
     justify-content: space-around;
     align-items: center;
     height: 40px;
-    // background: linear-gradient(#d5eee1, #73a58c);
-    background-color: #48719b;
+    border-radius: 0 0 15px 15px;
+    //background-color: rgb(72, 80, 102);
+    background-color: rgb(97, 105, 128);
     div {
-      :hover {
-      }
       label {
         margin: 0 10px;
         color: white;
@@ -95,7 +102,7 @@
     }
     .prev:hover,
     .next:hover {
-      color: rgb(248, 85, 26);
+      color: rgb(255, 240, 4);
     }
   }
 }

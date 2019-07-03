@@ -1,19 +1,36 @@
 @font-face {
   font-family: "iconfont"; /* project id 1249425 */
-  src: url("//at.alicdn.com/t/font_1249425_gayn078nvz.eot");
-  src: url("//at.alicdn.com/t/font_1249425_gayn078nvz.eot?#iefix")
+  src: url("//at.alicdn.com/t/font_1249425_8lgdeo9jgg3.eot");
+  src: url("//at.alicdn.com/t/font_1249425_8lgdeo9jgg3.eot?#iefix")
       format("embedded-opentype"),
-    url("//at.alicdn.com/t/font_1249425_gayn078nvz.woff2") format("woff2"),
-    url("//at.alicdn.com/t/font_1249425_gayn078nvz.woff") format("woff"),
-    url("//at.alicdn.com/t/font_1249425_gayn078nvz.ttf") format("truetype"),
-    url("//at.alicdn.com/t/font_1249425_gayn078nvz.svg#iconfont") format("svg");
+    url("//at.alicdn.com/t/font_1249425_8lgdeo9jgg3.woff2") format("woff2"),
+    url("//at.alicdn.com/t/font_1249425_8lgdeo9jgg3.woff") format("woff"),
+    url("//at.alicdn.com/t/font_1249425_8lgdeo9jgg3.ttf") format("truetype"),
+    url("//at.alicdn.com/t/font_1249425_8lgdeo9jgg3.svg#iconfont") format("svg");
 }
 
+@font-face {
+  font-family: "iconfont2"; /* project id 1272385 */
+  src: url("//at.alicdn.com/t/font_1272385_r656bbz9m6.eot");
+  src: url("//at.alicdn.com/t/font_1272385_r656bbz9m6.eot?#iefix")
+      format("embedded-opentype"),
+    url("//at.alicdn.com/t/font_1272385_r656bbz9m6.woff2") format("woff2"),
+    url("//at.alicdn.com/t/font_1272385_r656bbz9m6.woff") format("woff"),
+    url("//at.alicdn.com/t/font_1272385_r656bbz9m6.ttf") format("truetype"),
+    url("//at.alicdn.com/t/font_1272385_r656bbz9m6.svg#iconfont") format("svg");
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
 .App {
-  margin-top: 55px;
+  // padding-top: 55px;
   // display: flex;
   // flex-direction: column;
   // justify-content: center;
+  width: 100vw;
   a {
     text-decoration: none;
   }
@@ -23,67 +40,78 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(248, 248, 242, 0.068);
+    background-color: rgb(57, 64, 83);
+    // background-color: rgb(242, 242, 242);
     z-index: -1;
   }
   .left-nav {
-    width: 20vw;
+    width: 50px;
     display: flex;
     flex-direction: column;
-    // background-color: #87c4a6af;
-    background-color: rgb(158, 190, 205); //#6594c498;
     position: absolute;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    .top {
-      height: 140px;
-    }
+    top: 140px;
+    left: 20px;
+    height: 230px;
+    justify-content: space-between;
     .left-repair-settle,
-    .left-maintain {
-      // background-color: #357a58;
-      background-color: #2d547c;
-      height: 40px;
-      cursor: pointer;
-      :hover {
-        background-color: #548cc4ef;
-      }
-      label {
-        color: white;
-        line-height: 40px;
-        margin-left: 30px;
-        cursor: pointer;
-      }
-    }
+    .left-maintain,
     .left-assign,
     .left-operate {
-      // background-color: rgb(250, 252, 232);
-      height: 40px;
+      // background-color: #357a58;
+      // background-color: rgb(160, 175, 184);
+      background-color: rgb(72, 80, 102);
+      box-shadow: 10px 10px 20px 1px rgb(43, 48, 61);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      text-align: center;
       cursor: pointer;
+      .repair-i,
+      .assign-i,
+      .maintain-i {
+        font-family: "iconfont2" !important;
+        font-size: 30px;
+        line-height: 50px;
+        color: rgb(241, 245, 247);
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: 0.2px;
+        -moz-osx-font-smoothing: grayscale;
+      }
       :hover {
         background-color: #548cc4ef;
       }
-      label {
-        color: #2d547c;
-        line-height: 40px;
-        margin-left: 30px;
-        cursor: pointer;
+      .data-i {
+        font-family: "iconfont" !important;
+        font-size: 30px;
+        line-height: 50px;
+        color: rgb(241, 245, 247);
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: 0.2px;
+        -moz-osx-font-smoothing: grayscale;
       }
+    }
+    .left-repair-settle:hover,
+    .left-maintain:hover,
+    .left-assign:hover,
+    .left-operate:hover {
+      background-color: #548cc4ef;
     }
   }
   .work-page {
-    width: 80vw;
+    width: 100vw;
     position: absolute;
     right: 0;
     top: 0;
     height: 100vh;
-    z-index: -1;
+    //z-index: 1;
   }
 }
 .close {
   font-family: "iconfont" !important;
   font-size: 25px;
-  color: tomato;
+  color: rgb(72, 80, 102);
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -webkit-text-stroke-width: 0.2px;

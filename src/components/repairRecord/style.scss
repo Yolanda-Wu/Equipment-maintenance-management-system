@@ -2,7 +2,7 @@
   position: fixed;
   width: 600px;
   height: 450px;
-  background-color: white;
+  background-color: rgb(241, 245, 247);
   position: absolute;
   border-radius: 8px;
   top: 0;
@@ -17,7 +17,7 @@
     font-size: 2rem;
     text-align: center;
     margin: 20px;
-    color: #357a58;
+    color: #2d547c;
   }
 
   .regist-info {
@@ -37,17 +37,18 @@
         margin-bottom: 5px;
         label {
           color: rgb(80, 78, 78);
-          //flex-grow: 1;
+          line-height: 20px;
         }
         input {
           width: 80%;
           border: 1px solid rgb(80, 78, 78);
-          //flex-grow: 1;
+          border-radius: 4px;
+          height: 20px;
           //margin-left: 5px;
         }
         input:hover,
         input:focus {
-          border: 1px solid #357a58;
+          border: 1px solid #2d547c;
         }
       }
     }
@@ -83,10 +84,11 @@
     input {
       border: 1px solid rgb(80, 78, 78);
       height: 40px;
+      border-radius: 4px;
     }
     input:hover,
     input:focus {
-      border: 1px solid #357a58;
+      border: 1px solid #2d547c;
     }
   }
 

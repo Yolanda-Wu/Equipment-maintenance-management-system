@@ -50,58 +50,82 @@ class App extends Component {
             path="/"
             render={() => <Login refreshNav={this.refreshNav} />}
           />
+          <Navigation {...this.state} />
           <Route
             path="/:route"
             render={() => (
-              <div className="left-nav">
-                <div className="top" />
-                {this.state.identify === "1" || this.state.identify === "4" ? (
-                  <Link to="/admin">
-                    <div className="left-repair-settle">
-                      <label>报修与结算管理</label>
+              <div className="work-page">
+                <>
+                  <div className="left-nav">
+                    {this.state.identify === "1" ||
+                    this.state.identify === "4" ? (
+                      <Link to="/admin">
+                        <div className="left-repair-settle">
+                          <i className="repair-i">&#xe709;</i>
+                        </div>
+                      </Link>
+                    ) : (
+                      <div
+                        className="left-repair-settle"
+                        onClick={() => {
+                          alert("没有权限！");
+                        }}
+                      >
+                        <i className="repair-i">&#xe709;</i>
+                      </div>
+                    )}
+                    {this.state.identify === "2" ||
+                    this.state.identify === "4" ? (
+                      <Link to="/assign">
+                        <div className="left-assign">
+                          <i className="assign-i">&#xe608;</i>
+                        </div>
+                      </Link>
+                    ) : (
+                      <div
+                        className="left-assign"
+                        onClick={() => {
+                          alert("没有权限！");
+                        }}
+                      >
+                        <i className="assign-i">&#xe608;</i>
+                      </div>
+                    )}
+                    {this.state.identify === "3" ||
+                    this.state.identify === "4" ? (
+                      <Link to="/engineer">
+                        <div className="left-maintain">
+                          <i className="maintain-i">&#xe6af;</i>
+                        </div>
+                      </Link>
+                    ) : (
+                      <div
+                        className="left-maintain"
+                        onClick={() => {
+                          alert("没有权限！");
+                        }}
+                      >
+                        <i className="maintain-i">&#xe6af;</i>
+                      </div>
+                    )}
+                    <div
+                      className="left-operate"
+                      onClick={() => {
+                        alert("尚未开发！");
+                      }}
+                    >
+                      <i className="data-i">&#xe613;</i>
                     </div>
-                  </Link>
-                ) : (
-                  <div className="left-repair-settle">
-                    <label>报修与结算管理(无权限)</label>
                   </div>
-                )}
-                {this.state.identify === "2" || this.state.identify === "4" ? (
-                  <Link to="/assign">
-                    <div className="left-assign">
-                      <label>任务调度管理</label>
-                    </div>
-                  </Link>
-                ) : (
-                  <div className="left-assign">
-                    <label>任务调度管理(无权限)</label>
-                  </div>
-                )}
-                {this.state.identify === "3" || this.state.identify === "4" ? (
-                  <Link to="/engineer">
-                    <div className="left-maintain">
-                      <label>维修管理</label>
-                    </div>
-                  </Link>
-                ) : (
-                  <div className="left-maintain">
-                    <label>维修管理(无权限)</label>
-                  </div>
-                )}
-                <div className="left-operate">
-                  <label>数据趋势图(未开发)</label>
-                </div>
+                </>
+                <Route exact path="/admin" component={Admin} />
+                <Route path="/admin/:page" component={Admin} />
+                <Route exact path="/assign" component={Assign} />
+                <Route exact path="/engineer" component={Engineer} />
+                <Route exact path="/operator" component={Admin} />
               </div>
             )}
           />
-          <Navigation {...this.state} />
-          <div className="work-page">
-            <Route exact path="/admin" component={Admin} />
-            <Route path="/admin/:page" component={Admin} />
-            <Route exact path="/assign" component={Assign} />
-            <Route exact path="/engineer" component={Engineer} />
-            <Route exact path="/operator" component={Admin} />
-          </div>
         </div>
       </HashRouter>
     );

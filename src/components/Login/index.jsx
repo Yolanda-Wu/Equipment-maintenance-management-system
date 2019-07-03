@@ -6,10 +6,11 @@ const Login = props => {
   const { handleChange, handleSubmit, account, password } = props;
   return (
     <div className="login-wrap">
-      <i className="login-icon">&#xe643;</i>
+      {/* <i className="login-icon">&#xe643;</i> */}
+      <header className="login-title">Quality Guaranteed</header>
       <div className="accountBox">
         <i className="a-icon">&#xe6e0;</i>
-        <input
+        <textarea
           className="account"
           type="text"
           name="account"
@@ -31,7 +32,7 @@ const Login = props => {
         />
       </div>
       <div className="submit" onClick={handleSubmit}>
-        提交
+        登录
       </div>
     </div>
   );

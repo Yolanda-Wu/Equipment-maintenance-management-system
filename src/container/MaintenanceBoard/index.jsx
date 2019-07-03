@@ -80,54 +80,56 @@ class MaintenanceBoard extends Component {
             &#xe8b7;
           </i>
           <header>维修详情</header>
-          <PickCertificate {...this.state} repairId={order_num} />
-          <div className="maintain-info">
-            <div className="detect_record">
-              <label>检测记录</label>
-              <input
-                type="text"
-                name="detect_record"
-                onChange={this.handleChange}
-                value={detect_record}
-              />
-            </div>
-            <div className="maintain-record">
-              <label>维修记录</label>
-              <input
-                type="text"
-                name="maintain_record"
-                onChange={this.handleChange}
-                value={maintain_record}
-              />
-            </div>
-            <div className="cost">
-              <div className="manual-cost">
-                <label>人工费</label>
+          <div className="M-info">
+            <PickCertificate {...this.state} repairId={order_num} />
+            <div className="maintain-info">
+              <div className="detect_record">
+                <label>检测记录</label>
                 <input
                   type="text"
-                  name="manual_cost"
+                  name="detect_record"
                   onChange={this.handleChange}
-                  value={manual_cost}
+                  value={detect_record}
                 />
               </div>
-              <div className="material_cost">
-                <label>材料费</label>
+              <div className="maintain-record">
+                <label>维修记录</label>
                 <input
                   type="text"
-                  name="material_cost"
+                  name="maintain_record"
                   onChange={this.handleChange}
-                  value={material_cost}
+                  value={maintain_record}
                 />
               </div>
-            </div>
-            <div className="note">
-              <label>注意事项</label>
-              <input
-                type="text"
-                name="note"
-                onChange={this.handleChange}
-                value={note}
-              />
+              <div className="cost">
+                <div className="manual-cost">
+                  <label>人工费</label>
+                  <input
+                    type="text"
+                    name="manual_cost"
+                    onChange={this.handleChange}
+                    value={manual_cost}
+                  />
+                </div>
+                <div className="material_cost">
+                  <label>材料费</label>
+                  <input
+                    type="text"
+                    name="material_cost"
+                    onChange={this.handleChange}
+                    value={material_cost}
+                  />
+                </div>
+              </div>
+              <div className="note">
+                <label>注意事项</label>
+                <input
+                  type="text"
+                  name="note"
+                  onChange={this.handleChange}
+                  value={note}
+                />
+              </div>
             </div>
           </div>
           <div className="btns">

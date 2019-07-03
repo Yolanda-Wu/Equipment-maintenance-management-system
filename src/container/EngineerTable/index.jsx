@@ -47,9 +47,7 @@ class EngineerTable extends Component {
     const { handleClick, identify } = this.props;
     return (
       <div className="work-list">
-        <div className="list-title">
-          <label>维修单列表</label>
-        </div>
+        <div className="list-title" />
         <div className="th">
           <div className="th-td" key={"th-td-repairId"}>
             <label>维修单编号</label>
@@ -61,7 +59,7 @@ class EngineerTable extends Component {
             <label>维修状态</label>
           </div>
           <div className="th-td" key={"th-td-maintainer"}>
-            <label>维修人员</label>
+            <label>客户</label>
           </div>
           <div className="th-td" key={"th-td-assign"}>
             <label>修改</label>
